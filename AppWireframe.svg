@@ -2,20 +2,20 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1600mm"
    height="1300mm"
    viewBox="0 0 1600 1300"
    version="1.1"
    id="svg8"
-   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="AppWireframe.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="AppWireframe.svg">
   <defs
      id="defs2">
     <rect
@@ -116,18 +116,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.12374369"
-     inkscape:cx="2666.8028"
-     inkscape:cy="2852.6708"
+     inkscape:zoom="0.35000001"
+     inkscape:cx="3933.3619"
+     inkscape:cy="907.27203"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      showborder="true"
      inkscape:snap-global="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1046"
-     inkscape:window-x="-11"
-     inkscape:window-y="-11"
+     inkscape:window-height="1027"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:showpageshadow="2"
      inkscape:pagecheckerboard="0"
@@ -200,7 +200,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara1033" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-         id="flowPara1003"></flowPara><flowPara
+         id="flowPara1003" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara5523">Student Home Screen</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
@@ -208,7 +208,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara1526"> - Upcoming Events</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-         id="flowPara1540"></flowPara><flowPara
+         id="flowPara1540" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara5525">All Annoucements</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
@@ -222,19 +222,19 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara5544">Rate event</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-         id="flowPara5423"></flowPara><flowPara
+         id="flowPara5423" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara5527">POST questionaire</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara1025">Complaint submission</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-         id="flowPara1027"></flowPara><flowPara
+         id="flowPara1027" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara5529" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara1029" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-         id="flowPara1035"></flowPara><flowPara
+         id="flowPara1035" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara5533">Admin Home Screen</flowPara><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
@@ -264,8 +264,7 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
          id="flowPara1013" /><flowPara
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif"
-         id="flowPara1015" /></flowRoot>
-    <text
+         id="flowPara1015" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:Impact;-inkscape-font-specification:Impact;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="294.06549"
@@ -292,8 +291,7 @@
          id="flowPara1065">- LOGIN button</flowPara><flowPara
          id="flowPara1376">- SIGN UP button</flowPara><flowPara
          id="flowPara1071">- Logo</flowPara><flowPara
-         id="flowPara1067" /></flowRoot>
-    <rect
+         id="flowPara1067" /></flowRoot>    <rect
        style="opacity:1;fill:#069bff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1069"
        width="59.333832"
@@ -320,8 +318,7 @@
            x="1234.4064"
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara1081">LOGIN</flowPara></flowRoot>
-    <rect
+         id="flowPara1081">LOGIN</flowPara></flowRoot>    <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1093"
        width="76.973618"
@@ -349,8 +346,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara1081-3"
-         style="font-style:italic">Enter Username</flowPara></flowRoot>
-    <flowRoot
+         style="font-style:italic">Enter Username</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.13357992,0,0,0.13357992,131.76042,268.92118)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot1127"
@@ -364,8 +360,7 @@
            width="333.57483"
            id="rect1121" /></flowRegion><flowPara
          id="flowPara1125"
-         style="font-style:italic">Enter Password</flowPara></flowRoot>
-    <flowRoot
+         style="font-style:italic">Enter Password</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.11226203,0,0,0.11226203,165.21226,364.36993)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot1127-8"
@@ -379,8 +374,7 @@
            width="460.90631"
            id="rect1121-9" /></flowRegion><flowPara
          id="flowPara1125-2"
-         style="font-style:italic">Not a student? Switch to Admin Login</flowPara></flowRoot>
-    <rect
+         style="font-style:italic">Not a student? Switch to Admin Login</flowPara></flowRoot>    <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.369177;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1153"
        width="6.4188499"
@@ -423,8 +417,7 @@
            height="55.352425"
            width="195.17926"
            id="rect1167" /></flowRegion><flowPara
-         id="flowPara1171">Sign Up</flowPara></flowRoot>
-    <rect
+         id="flowPara1171">Sign Up</flowPara></flowRoot>    <rect
        y="182.13786"
        x="566.67389"
        height="8.5526247"
@@ -452,8 +445,7 @@
            width="333.57483"
            id="rect1179" /></flowRegion><flowPara
          style="font-style:italic;text-align:start;text-anchor:start"
-         id="flowPara1183">Student ID</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara1183">Student ID</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1193"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -467,8 +459,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          style="font-style:italic;text-align:start;text-anchor:start"
-         id="flowPara1191">Email</flowPara></flowRoot>
-    <rect
+         id="flowPara1191">Email</flowPara></flowRoot>    <rect
        style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1177-8"
        width="76.973633"
@@ -505,8 +496,7 @@
          id="flowPara1295">- Sign Up Button</flowPara><flowPara
          id="flowPara1417">- Login Button (goes back)</flowPara><flowPara
          id="flowPara1297" /><flowPara
-         id="flowPara1067-7" /></flowRoot>
-    <flowRoot
+         id="flowPara1067-7" /></flowRoot>    <flowRoot
        transform="matrix(0.26458333,0,0,0.26458333,710.66427,248.20154)"
        xml:space="preserve"
        id="flowRoot1049-5-3"
@@ -519,8 +509,7 @@
            x="1094.2858"
            y="1771.0911"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;text-anchor:start" /></flowRegion><flowPara
-         id="flowPara6685" /></flowRoot>
-    <flowRoot
+         id="flowPara6685" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1258"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Impact;-inkscape-font-specification:Impact;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
@@ -530,8 +519,7 @@
            height="94.285713"
            x="2191.4285"
            y="-257.48032" /></flowRegion><flowPara
-         id="flowPara1264" /></flowRoot>
-    <rect
+         id="flowPara1264" /></flowRoot>    <rect
        style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1301"
        width="76.973618"
@@ -559,8 +547,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara1309"
-         style="font-style:italic;text-align:start;text-anchor:start">First Name</flowPara></flowRoot>
-    <flowRoot
+         style="font-style:italic;text-align:start;text-anchor:start">First Name</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.13357992,0,0,0.13357992,403.90328,-5.2577898)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
        id="flowRoot1319"
@@ -574,8 +561,7 @@
            width="333.57483"
            id="rect1313" /></flowRegion><flowPara
          id="flowPara1317"
-         style="font-style:italic;text-align:start;text-anchor:start">Last Name</flowPara></flowRoot>
-    <rect
+         style="font-style:italic;text-align:start;text-anchor:start">Last Name</flowPara></flowRoot>    <rect
        y="233.54263"
        x="566.67389"
        height="8.5526247"
@@ -603,8 +589,7 @@
            width="399.60199"
            id="rect1325" /></flowRegion><flowPara
          style="font-style:italic;text-align:start;text-anchor:start"
-         id="flowPara1329">Enter a Username</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara1329">Enter a Username</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1339"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -618,8 +603,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          style="font-style:italic;text-align:start;text-anchor:start"
-         id="flowPara1337">Enter a password</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara1337">Enter a password</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1341"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Impact;-inkscape-font-specification:Impact;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
@@ -629,8 +613,7 @@
            height="290.92392"
            x="2254.6604"
            y="334.60071" /></flowRegion><flowPara
-         id="flowPara1347" /></flowRoot>
-    <rect
+         id="flowPara1347" /></flowRoot>    <rect
        y="270.4527"
        x="566.67389"
        height="8.5526247"
@@ -651,8 +634,7 @@
            width="527.65448"
            id="rect1364" /></flowRegion><flowPara
          id="flowPara1368"
-         style="font-style:italic;text-align:start;text-anchor:start">Confirm Password</flowPara></flowRoot>
-    <flowRoot
+         style="font-style:italic;text-align:start;text-anchor:start">Confirm Password</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1075-0"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
@@ -665,8 +647,7 @@
            x="1234.4064"
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara1081-31">SIGN UP</flowPara></flowRoot>
-    <rect
+         id="flowPara1081-31">SIGN UP</flowPara></flowRoot>    <rect
        style="opacity:1;fill:#00111c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1415"
        width="21.544643"
@@ -686,8 +667,7 @@
            x="1234.4064"
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara1081-31-5">LOGIN</flowPara></flowRoot>
-    <rect
+         id="flowPara1081-31-5">LOGIN</flowPara></flowRoot>    <rect
        style="fill:#00111c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1415-1"
        width="21.544643"
@@ -782,8 +762,7 @@
            height="55.352425"
            width="195.17926"
            id="rect1167-1" /></flowRegion><flowPara
-         id="flowPara1171-5">Submit</flowPara></flowRoot>
-    <text
+         id="flowPara1171-5">Submit</flowPara></flowRoot>    <text
        id="text1209-0"
        y="287.99582"
        x="1433.4038"
@@ -822,8 +801,7 @@
            width="586.35474"
            id="rect1325-9" /></flowRegion><flowPara
          style="font-style:italic;text-align:start;text-anchor:start"
-         id="flowPara1329-3">Enter a title for complaint</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara1329-3">Enter a title for complaint</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1339-6"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
@@ -837,8 +815,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;text-anchor:start;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          style="font-style:italic;text-align:start;text-anchor:start"
-         id="flowPara1337-1" /></flowRoot>
-    <path
+         id="flowPara1337-1" /></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#00111c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.747482;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="path1431-2-8"
@@ -1039,8 +1016,7 @@
          id="flowPara1702"> </flowPara><flowPara
          id="flowPara1538" /><flowPara
          id="flowPara1489" /><flowPara
-         id="flowPara1491" /></flowRoot>
-    <flowRoot
+         id="flowPara1491" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1495"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Impact;-inkscape-font-specification:Impact;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
@@ -1050,8 +1026,7 @@
            height="54.285713"
            x="2465.7144"
            y="3671.0911" /></flowRegion><flowPara
-         id="flowPara1501" /></flowRoot>
-    <flowRoot
+         id="flowPara1501" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1512"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:Impact;-inkscape-font-specification:Impact;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"><flowRegion
@@ -1061,8 +1036,7 @@
            height="48.57143"
            x="1034.2858"
            y="-68.90889" /></flowRegion><flowPara
-         id="flowPara1518" /></flowRoot>
-    <text
+         id="flowPara1518" /></flowRoot>    <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="605.22705"
@@ -1235,8 +1209,7 @@
            x="1234.4064"
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara1081-4">See All</flowPara></flowRoot>
-    <rect
+         id="flowPara1081-4">See All</flowPara></flowRoot>    <rect
        y="767.07819"
        x="562.71667"
        height="10.744239"
@@ -1256,8 +1229,7 @@
            height="92.934036"
            width="189.90868"
            id="rect1657" /></flowRegion><flowPara
-         id="flowPara1661">See All</flowPara></flowRoot>
-    <g
+         id="flowPara1661">See All</flowPara></flowRoot>    <g
        id="g3522"
        style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-opacity:1"
        transform="translate(-19.243406,102.6315)">
@@ -1483,8 +1455,7 @@
            height="92.934036"
            width="189.90868"
            id="rect1722" /></flowRegion><flowPara
-         id="flowPara1726">LOGIN</flowPara></flowRoot>
-    <rect
+         id="flowPara1726">LOGIN</flowPara></flowRoot>    <rect
        y="414.29095"
        x="122.17387"
        height="8.5526247"
@@ -1512,8 +1483,7 @@
            width="333.57483"
            id="rect1734" /></flowRegion><flowPara
          style="font-style:italic"
-         id="flowPara1738">Enter Username</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara1738">Enter Username</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1748"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
@@ -1527,8 +1497,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          style="font-style:italic"
-         id="flowPara1746">Enter Password</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara1746">Enter Password</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot1756"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
@@ -1542,8 +1511,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          style="font-style:italic"
-         id="flowPara1754">Not a student? Switch to Admin Login</flowPara></flowRoot>
-    <rect
+         id="flowPara1754">Not a student? Switch to Admin Login</flowPara></flowRoot>    <rect
        y="503.59564"
        x="186.4615"
        height="6.4188499"
@@ -1581,8 +1549,7 @@
            height="92.934036"
            width="189.90868"
            id="rect1766" /></flowRegion><flowPara
-         id="flowPara1770">SIGN UP</flowPara></flowRoot>
-    <rect
+         id="flowPara1770">SIGN UP</flowPara></flowRoot>    <rect
        y="276.43521"
        x="104.07131"
        height="0.28348213"
@@ -1774,8 +1741,7 @@
            x="1234.4064"
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara1230">See All</flowPara></flowRoot>
-    <rect
+         id="flowPara1230">See All</flowPara></flowRoot>    <rect
        y="770.10199"
        x="734.31793"
        height="10.744239"
@@ -1795,8 +1761,7 @@
            height="92.934036"
            width="189.90868"
            id="rect1236" /></flowRegion><flowPara
-         id="flowPara1240">See All</flowPara></flowRoot>
-    <rect
+         id="flowPara1240">See All</flowPara></flowRoot>    <rect
        y="1103.8098"
        x="1388.0986"
        height="10.744239"
@@ -1816,8 +1781,7 @@
            height="92.934036"
            width="189.90868"
            id="rect1236-0" /></flowRegion><flowPara
-         id="flowPara1240-3">Submit</flowPara></flowRoot>
-    <rect
+         id="flowPara1240-3">Submit</flowPara></flowRoot>    <rect
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.56954;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="rect2806"
        width="79.646332"
@@ -1859,8 +1823,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara1230-6"
-         style="text-align:start;text-anchor:start">Check POSt</flowPara></flowRoot>
-    <rect
+         style="text-align:start;text-anchor:start">Check POSt</flowPara></flowRoot>    <rect
        style="opacity:1;fill:#818181;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect1244"
        width="7.3705359"
@@ -1923,8 +1886,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara2786"
-         style="text-align:start;text-anchor:start">Announcements</flowPara></flowRoot>
-    <flowRoot
+         style="text-align:start;text-anchor:start">Announcements</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot2796"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
@@ -1938,8 +1900,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara2794"
-         style="text-align:start;text-anchor:start">Events</flowPara></flowRoot>
-    <flowRoot
+         style="text-align:start;text-anchor:start">Events</flowPara></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot2804"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
@@ -1953,8 +1914,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1" /></flowRegion><flowPara
          id="flowPara2802"
-         style="text-align:start;text-anchor:start">Submit Complaint</flowPara></flowRoot>
-    <path
+         style="text-align:start;text-anchor:start">Submit Complaint</flowPara></flowRoot>    <path
        inkscape:connector-curvature="0"
        id="path3040"
        d="m 919.90196,355.46738 c -6.21253,-1.34671 -11.56878,-6.63853 -12.83793,-12.68349 -0.33921,-1.6156 -0.38885,-19.40171 -0.38885,-139.30313 0,-152.153026 -0.15747,-139.255006 1.74737,-143.125546 1.43975,-2.9255 4.54017,-5.98223 7.51429,-7.4084 4.15948,-1.99459 -0.49032,-1.85687 62.69581,-1.85687 62.75985,0 58.55275,-0.11588 62.41685,1.71918 4.5681,2.16941 7.7973,6.0559 9.0272,10.86474 0.4967,1.94216 0.5227,2.98855 0.5227,21.07607 0,18.809926 0.01,19.034056 0.5292,19.170826 0.5224,0.13662 0.5291,0.36089 0.5291,17.693 0,17.28384 -0.01,17.559 -0.5291,17.83783 -0.5062,0.2709 -0.5292,0.55399 -0.5292,6.51637 0,6.01066 0.019,6.23812 0.5292,6.37156 0.5078,0.13278 0.5291,0.36089 0.5291,5.64594 0,5.27519 -0.022,5.51465 -0.5291,5.67551 -0.5278,0.16751 -0.5292,0.40032 -0.5292,88.8755 0,87.47395 -0.01,88.73598 -0.5227,90.75118 -1.5585,6.09386 -6.5878,10.8675 -12.8463,12.19322 -2.6986,0.57163 -114.68859,0.55875 -117.32844,-0.0135 z m 115.33164,-5.92839 c 3.6438,-0.52665 7.2028,-3.2584 8.5303,-6.54751 l 0.6178,-1.53051 V 203.48076 65.500544 l -0.6178,-1.5305 c -1.3275,-3.28912 -4.8865,-6.02086 -8.5303,-6.54753 -0.9349,-0.13514 -5.8291,-0.24809 -10.876,-0.25102 l -9.1763,-0.005 -0.4367,2.05052 c -0.8657,4.06408 -1.6062,5.34056 -3.7221,6.41614 l -1.3012,0.66146 h -30.96339 -30.96328 l -1.29221,-0.66498 c -1.89477,-0.97505 -2.81515,-2.4695 -3.55121,-5.76616 l -0.60216,-2.69698 -9.30872,0.005 c -5.1198,0.003 -10.05186,0.1128 -10.96015,0.24417 -3.18082,0.46006 -6.30132,2.51549 -7.86202,5.17862 -1.583,2.7012 -1.46676,-8.46444 -1.46676,140.886476 0,149.35092 -0.11624,138.18529 1.46676,140.88647 1.50119,2.56159 4.71304,4.73676 7.62351,5.16287 2.01214,0.29459 111.35603,0.30319 113.39193,0.009 z M 955.33377,62.333584 c 1.44225,-0.74581 1.57173,-2.75129 0.23796,-3.6855 -1.77086,-1.24036 -4.18605,0.58289 -3.37283,2.54618 0.30248,0.73025 1.33105,1.49575 2.03908,1.51756 0.18913,0.006 0.68224,-0.16438 1.09579,-0.37824 z m 47.92973,-0.0207 c 0.7432,-0.38429 1.2984,-1.28275 1.2984,-2.10091 0,-0.19765 -0.3082,-0.72568 -0.685,-1.1734 -1.7834,-2.11953 -4.97639,0.31748 -3.3877,2.58566 0.3799,0.54242 1.1867,1.03514 1.7708,1.08143 0.1163,0.009 0.5679,-0.16752 1.0035,-0.39278 z m -40.6892,-1.47271 c 0.39217,-0.62592 0.0301,-1.29273 -0.70199,-1.29273 -0.90701,0 -1.35039,0.60606 -0.9672,1.32206 0.34664,0.64769 1.25502,0.63173 1.66919,-0.0293 z m 24.86921,0 c 0.1481,-0.23488 0.1945,-0.62183 0.1031,-0.85989 -0.1476,-0.38474 -0.9001,-0.43284 -6.77121,-0.43284 -6.42422,0 -6.60971,0.0148 -6.77698,0.54186 -0.39656,1.24944 0.0141,1.32458 6.82458,1.2487 5.50751,-0.0614 6.38711,-0.12751 6.62051,-0.49783 z"
@@ -1979,8 +1939,7 @@
            height="55.352425"
            width="195.17926"
            id="rect3044" /></flowRegion><flowPara
-         id="flowPara3048">Check</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara3048">Check</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.15620568,0,0,0.15461687,741.52447,-71.335119)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#676767;fill-opacity:1;stroke:none"
        id="flowRoot3050-3"
@@ -1993,8 +1952,7 @@
            height="237.77689"
            width="576.75226"
            id="rect3044-4" /></flowRegion><flowPara
-         id="flowPara3048-7">Answer a few questions to check your POSt eligibility: </flowPara></flowRoot>
-    <flowRoot
+         id="flowPara3048-7">Answer a few questions to check your POSt eligibility: </flowPara></flowRoot>    <flowRoot
        transform="matrix(0.15620568,0,0,0.15461687,740.81974,124.68603)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#13b063;fill-opacity:1;stroke:none"
        id="flowRoot3050-3-3"
@@ -2007,8 +1965,7 @@
            height="237.77689"
            width="576.75226"
            id="rect3044-4-6" /></flowRegion><flowPara
-         id="flowPara3048-7-3">You Qualify!</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara3048-7-3">You Qualify!</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.15620568,0,0,0.15461687,922.6234,126.46751)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#dd3d01;fill-opacity:1;stroke:none"
        id="flowRoot3050-3-3-9"
@@ -2022,8 +1979,7 @@
            width="576.75226"
            id="rect3044-4-6-1" /></flowRegion><flowPara
          id="flowPara3048-7-3-2"
-         style="fill:#dd3d01;fill-opacity:1">You do not meet the requirements.</flowPara></flowRoot>
-    <text
+         style="fill:#dd3d01;fill-opacity:1">You do not meet the requirements.</flowPara></flowRoot>    <text
        id="text3074"
        y="110.80281"
        x="977.70673"
@@ -2055,8 +2011,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara3084"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <text
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-3.3684057,102.6315)"
        id="text3663"
@@ -2095,8 +2050,7 @@
            height="237.77689"
            width="576.75226"
            id="rect3829" /></flowRegion><flowPara
-         id="flowPara3833" /></flowRoot>
-    <text
+         id="flowPara3833" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:4.9389px;font-family:'Microsoft Sans Serif';-inkscape-font-specification:'Microsoft Sans Serif';text-align:start;text-anchor:start;fill:#676767;fill-opacity:1;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        x="955.22125"
@@ -2137,8 +2091,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara3955"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path3959"
@@ -2185,8 +2138,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara3973"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path3977"
@@ -2233,8 +2185,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara3991"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path3995"
@@ -2310,8 +2261,7 @@
            height="55.352425"
            width="195.17926"
            id="rect4249" /></flowRegion><flowPara
-         id="flowPara4253">Check</flowPara></flowRoot>
-    <flowRoot
+         id="flowPara4253">Check</flowPara></flowRoot>    <flowRoot
        transform="matrix(0.15620568,0,0,0.15461687,920.59506,-70.266039)"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#676767;fill-opacity:1;stroke:none"
        id="flowRoot4263"
@@ -2324,8 +2274,7 @@
            height="237.77689"
            width="576.75226"
            id="rect4257" /></flowRegion><flowPara
-         id="flowPara4261">Answer a few questions to check your POSt eligibility: </flowPara></flowRoot>
-    <text
+         id="flowPara4261">Answer a few questions to check your POSt eligibility: </flowPara></flowRoot>    <text
        id="text4267"
        y="111.87189"
        x="1156.7771"
@@ -2357,8 +2306,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara4275"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path4279"
@@ -2406,8 +2354,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara4291"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path4295"
@@ -2454,8 +2401,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara4307"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path4311"
@@ -2502,8 +2448,7 @@
            y="1265.9613"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1;text-anchor:start;text-align:start;" /></flowRegion><flowPara
          id="flowPara4323"
-         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>
-    <path
+         style="font-style:italic;text-align:start;text-anchor:start">Select</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#000000;fill-opacity:0.200436;stroke:none;stroke-width:4.50001;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"
        id="path4327"
@@ -3027,21 +2972,21 @@
        xml:space="preserve"
        transform="matrix(0.61134378,0,0,0.61134378,-1333.5796,-415.21379)"
        id="text9397"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.6667px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;white-space:pre;shape-inside:url(#rect9531);display:inline;fill:#b7b7b7;fill-opacity:1;stroke:none;stroke-width:17.0079;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:18.66670036px;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:start;white-space:pre;shape-inside:url(#rect9531);display:inline;fill:#b7b7b7;fill-opacity:1;stroke:none;stroke-width:17.00790024;stroke-linecap:square;stroke-linejoin:round;paint-order:stroke fill markers"><tspan
          x="3790.0918"
-         y="2635.3466"
+         y="2635.3467"
          id="tspan19083"><tspan
            style="fill:#000000"
            id="tspan19081">Events
 </tspan></tspan><tspan
          x="3790.0918"
-         y="2658.6801"
+         y="2658.6802"
          id="tspan19087"><tspan
            style="fill:#000000"
-           id="tspan19085">- Click on an Event to expand
+           id="tspan19085">- Click on an Event to expand and RSVP
 </tspan></tspan><tspan
          x="3790.0918"
-         y="2682.0136"
+         y="2682.0137"
          id="tspan19091"><tspan
            style="fill:#000000"
            id="tspan19089">- If Click on a past event, takes you to new page (Rate Event)</tspan></tspan></text>
@@ -3049,9 +2994,9 @@
        y="947.73779"
        x="1125.2047"
        height="3.2072346"
-       width="55.324791"
+       width="44.174492"
        id="rect9409"
-       style="fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.346344;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+       style="fill:#e5e5e5;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.3094807;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     <rect
        y="965.91211"
        x="1106.3622"
@@ -3528,8 +3473,7 @@
            height="92.934036"
            width="189.90868"
            id="rect12776" /></flowRegion><flowPara
-         id="flowPara12780">Go Back</flowPara></flowRoot>
-    <path
+         id="flowPara12780">Go Back</flowPara></flowRoot>    <path
        sodipodi:type="star"
        style="fill:#00111c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.747482;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="path12784"
@@ -3596,6 +3540,16 @@
            height="55.352425"
            width="195.17926"
            id="rect14029" /></flowRegion><flowPara
-         id="flowPara14033">Cancel</flowPara></flowRoot>
+         id="flowPara14033">Cancel</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.82155991px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#707070;fill-opacity:1;stroke:none;stroke-width:0.120539;"
+       x="1180.1135"
+       y="951.3407"
+       id="text9419-9"><tspan
+         sodipodi:role="line"
+         id="tspan9417-6"
+         x="1180.1135"
+         y="951.3407"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;stroke-width:0.120539;fill:#707070;fill-opacity:1;">RSVP</tspan></text>
   </g>
 </svg>
