@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">StudentApp</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="sign_up">Sign up</string>
+    <string name="log_in">Log in</string>
+    <string name="previous">Previous</string>
+    <string name="user_login">User Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+
+    <string name="as_admin">I am an admin</string>
+
+    <string name="lorem_ipsum">
+        lmao
+    </string>
+</resources>
