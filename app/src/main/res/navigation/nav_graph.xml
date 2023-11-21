@@ -7,26 +7,29 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.example.studentapp.LoginFragment"
-        android:label="@string/first_fragment_label"
+        android:name="com.example.studentapp.Login.LoginFragment"
+        android:label="@string/login_fragment_label"
         tools:layout="@layout/login_fragment">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/SignupFragment" />
         <action
             android:id="@+id/action_FirstFragment_to_ThirdFragment"
             app:destination="@id/ThirdFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.studentapp.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/SignupFragment"
+        android:name="com.example.studentapp.Signup.SignupFragment"
+        android:label="@string/signup_fragment_label"
+        tools:layout="@layout/signup_fragment">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/LoginFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
     </fragment>
     <fragment
         android:id="@+id/ThirdFragment"

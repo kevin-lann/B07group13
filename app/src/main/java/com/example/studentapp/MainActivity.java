@@ -2,6 +2,7 @@ package com.example.studentapp;
 
 import android.os.Bundle;
 
+import com.example.studentapp.objects.User;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +19,11 @@ import com.example.studentapp.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    public static User currUser;
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
@@ -68,4 +72,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }

@@ -2,8 +2,8 @@
     <string name="app_name">StudentApp</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="login_fragment_label">Login</string>
+    <string name="signup_fragment_label">Signup</string>
 
     <string name="sign_up">Sign up</string>
     <string name="log_in">Log in</string>
@@ -12,7 +12,15 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
 
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="id">ID</string>
+    <string name="email">Email</string>
+    <string name="confirm_password">Confirm Password</string>
+
     <string name="as_admin">I am an admin</string>
+
+    <string name="events">Events</string>
 
     <string name="lorem_ipsum">
         lmao
