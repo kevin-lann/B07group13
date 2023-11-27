@@ -11,6 +11,8 @@
     <string name="user_login">User Login</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
 
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
