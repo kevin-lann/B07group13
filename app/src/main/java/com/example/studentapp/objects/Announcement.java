@@ -1,5 +1,8 @@
 package com.example.studentapp.objects;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Announcement {
     public int announcementId;
     public AdminUser announcer;
@@ -10,9 +13,6 @@ public class Announcement {
     public int time[];
     // int[3] {month, day, year}
     public int date[];
-
-    private final String[] MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "jul", "Aug", "Sep" +
-            "Oct", "Nov", "Dec"};
 
     public Announcement(int announcementId, AdminUser announcer) {
         this.announcementId = announcementId;
@@ -34,6 +34,16 @@ public class Announcement {
     }
 
     public String getFormattedDate() {
-        return MONTHS[date[0]] + " " + date[1] + ", " + date[2];
+        return date[0] + "-" + date[1] + "-" + date[2];
+    }
+
+    public Map<String,String> createMap(){
+        Map<String, String> info = new HashMap<>();
+        info.put("announcer", announcer.getUsername());
+        info.put("announcementName", announcementName);
+        info.put("announcementDescription", announcementDescription);
+        info.put("time", getFormattedTime());
+        info.put("date", getFormattedDate());
+        return info;
     }
 }

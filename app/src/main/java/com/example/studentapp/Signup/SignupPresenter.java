@@ -1,6 +1,8 @@
 package com.example.studentapp.Signup;
 
 
+import androidx.annotation.NonNull;
+
 import com.example.studentapp.MainActivity;
 import com.example.studentapp.objects.AdminUser;
 import com.example.studentapp.objects.StudentUser;
@@ -16,7 +18,7 @@ public class SignupPresenter {
         this.frag = frag;
     }
 
-    public void performSignup(User user, boolean passwordConfirmed) {
+    public void performSignup(@NonNull User user, boolean passwordConfirmed) {
         model.queryDB(user.getUsername(), user.getUserType()).thenAccept( success -> {
             if(success && passwordConfirmed) {
                 // set main activity's curr user to new User

@@ -28,12 +28,11 @@ public class LoginModel {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 String passwordDb = String.valueOf(snapshot.child("password").getValue());
 
                 if(passwordDb.equals(password)) {
                     cf.complete(true);
-                    Log.w("cccc", "password:" + passwordDb);
+                    // Log.w("cccc", "password:" + passwordDb);
                 }
                 cf.complete(false);
             }

@@ -3,7 +3,7 @@ package com.example.studentapp.objects;
 public class Event {
 
     public int eventId;
-    public AdminUser organizer;
+    public String organizer;
     public int numAttendees;
     public int maxAttendees;
     public String eventName;
@@ -19,15 +19,9 @@ public class Event {
     // int[3] {month, day, year}
     public int date[];
 
-    private final String[] MONTHS = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "jul", "Aug", "Sep" +
-            "Oct", "Nov", "Dec"};
+    public Event() {}
 
-    public Event(int eventId, AdminUser organizer) {
-        this.eventId = eventId;
-        this.organizer = organizer;
-    }
-
-    public Event(int eventId, AdminUser organizer, int numAttendees, int maxAttendees, String eventName,
+    public Event(int eventId, String organizer, int numAttendees, int maxAttendees, String eventName,
     String eventDescription, String eventLocation, int startTime[], int endTime[], int date[]) {
         this.eventId = eventId;
         this.organizer = organizer;
@@ -46,7 +40,7 @@ public class Event {
     }
 
     public String getFormattedDate() {
-        return MONTHS[date[0]] + " " + date[1] + ", " + date[2];
+        return date[0] + "-" + date[1] + "-" + date[2];
     }
 
     @Override
@@ -63,6 +57,19 @@ public class Event {
         int result = 31, d = 67;
         result += d * eventId;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        String ret = "Event Name: " + eventName +
+                "\nOrganizer: " + organizer +
+                "\nid: " + eventId +
+                "\nnum Attendees / max Attendees: " + numAttendees + " " + maxAttendees +
+                "\nDescription: " + eventDescription +
+                "\nLocation: " + eventLocation +
+                "\ntime: " + getFormattedTime() +
+                "\nDate: " + getFormattedDate();
+        return ret;
     }
 
 }
