@@ -66,7 +66,7 @@ public class LoginFragment extends Fragment {
 
     public void loginSuccess() {
         NavHostFragment.findNavController(LoginFragment.this)
-                .navigate(R.id.action_FirstFragment_to_ThirdFragment);
+                .navigate(R.id.action_FirstFragment_to_ComplaintsFragment);
     }
 
     public void loginUnsuccess() {

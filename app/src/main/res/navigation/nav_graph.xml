@@ -15,8 +15,8 @@
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SignupFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_ThirdFragment"
-            app:destination="@id/ThirdFragment" />
+            android:id="@+id/action_FirstFragment_to_ComplaintsFragment"
+            app:destination="@id/ComplaintsFragment" />
     </fragment>
     <fragment
         android:id="@+id/SignupFragment"
@@ -31,6 +31,7 @@
             android:id="@+id/action_SecondFragment_to_ThirdFragment"
             app:destination="@id/ThirdFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/ThirdFragment"
         android:name="com.example.studentapp.ThirdFragment"
@@ -41,4 +42,14 @@
             android:id="@+id/action_ThirdFragment_to_FirstFragment"
             app:destination="@id/LoginFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ComplaintsFragment"
+        android:name="com.example.studentapp.Complaints.ComplaintsFragment"
+        android:label="Complaints Fragment"
+        tools:layout="@layout/complaints_fragment">
+        <!-- Define actions if needed -->
+    </fragment>
+
+
 </navigation>

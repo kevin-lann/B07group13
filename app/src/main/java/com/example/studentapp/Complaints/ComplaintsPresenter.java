@@ -1,24 +1,17 @@
 package com.example.studentapp.Complaints;
 
-import com.example.studentapp.Login.LoginFragment;
-import com.example.studentapp.Login.LoginModel;
-import com.example.studentapp.MainActivity;
-import com.example.studentapp.objects.AdminUser;
-import com.example.studentapp.objects.StudentUser;
-import com.example.studentapp.objects.User;
-
 public class ComplaintsPresenter {
 
-    ComplaintsModel model;
-    ComplaintsFragment frag;
+    private ComplaintsModel model;
+    private ComplaintsFragment fragment;
 
-    public ComplaintsPresenter(ComplaintsModel model, ComplaintsFragment frag) {
+    public ComplaintsPresenter(ComplaintsModel model, ComplaintsFragment fragment) {
         this.model = model;
-        this.frag = frag;
+        this.fragment = fragment;
     }
 
-    public void createComplaint(User user) {
-
+    public void submitComplaint(String username, String title, String description) {
+        model.submitComplaintToFirebase(username, title, description);
+        fragment.complaintSubmissionSuccess(); // Notify success to the fragment
     }
-
 }
