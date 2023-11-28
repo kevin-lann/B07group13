@@ -1,7 +1,11 @@
 # B07group13 Info
 
+**Important Links**
+
 Firebase link:
 https://b07-group13-default-rtdb.firebaseio.com/
+
+Wireframes:
 
 **Meeting notes:**
 
@@ -17,6 +21,7 @@ Plans:
 - Set up Github
 - Set up firebase
 
+
 Nov 14
 
 What was discussed:
@@ -28,8 +33,10 @@ What was discussed:
 - We went with 2nd optn because will be easy to combine fragments later on
 
 Plans:
+
 - Complete sign in and log in user stories
 - Complete Dashboard, submit complaint, announcements, events, check Post, event rate pages (frontend)
+
 
 Nov 21
 
@@ -41,6 +48,7 @@ What was discussed:
 Plans:
 
 - Complete backends for the stories listed in prior meeting
+
 
 Nov 28
 
