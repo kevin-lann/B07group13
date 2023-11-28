@@ -57,7 +57,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/complaint_title_tf"
+            android:id="@+id/editComplaintTitle"
             android:layout_width="281dp"
             android:layout_height="wrap_content"
             android:hint="Enter a title for complaint" />
@@ -74,7 +74,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/complaint_tf"
+            android:id="@+id/editComplaintDesc"
             android:layout_width="386dp"
             android:layout_height="346dp" />
     </com.google.android.material.textfield.TextInputLayout>

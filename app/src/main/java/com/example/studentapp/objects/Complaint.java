@@ -17,6 +17,10 @@ public class Complaint {
         this.complaintDetails = complaintDetails;
     }
 
+    public String getUsername(){
+        return student.getUsername();
+    }
+
     @Override
     public boolean equals(Object other) {
         if(other == null || !(other instanceof Complaint)) {

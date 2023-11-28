@@ -4,6 +4,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
+import com.example.studentapp.objects.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +21,12 @@ public class ComplaintsModel {
 
     public ComplaintsModel() {
         db = FirebaseDatabase.getInstance("https://b07-group13-default-rtdb.firebaseio.com");
+    }
+
+    public void createNewComplaint(User user) {
+        String usertype = user.getUserType();
+        DatabaseReference ref = db.getReference().child("UserInfo").child(usertype);
+        ref.child(user.getUsername()).setValue(user.createMap());
     }
 
     public CompletableFuture<Boolean> queryDB(String username, String password, String usertype) {
