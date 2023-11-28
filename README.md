@@ -4,6 +4,7 @@ Firebase link:
 https://b07-group13-default-rtdb.firebaseio.com/
 
 **Meeting notes:**
+
 Nov 7
 What was discussed:
 - Setting up firebase
