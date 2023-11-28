@@ -12,6 +12,6 @@ public class ComplaintsPresenter {
 
     public void submitComplaint(String username, String title, String description) {
         model.submitComplaintToFirebase(username, title, description);
-        fragment.complaintSubmissionSuccess(); // Notify success to the fragment
+        fragment.complaintSubmissionSuccess("Submitted Complaint Successfully!"); // Notify success to the fragment
     }
 }

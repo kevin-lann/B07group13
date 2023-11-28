@@ -75,8 +75,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editComplaintDesc"
-            android:layout_width="386dp"
-            android:layout_height="346dp"
+            android:layout_width="match_parent"
+            android:layout_height="333dp"
             android:hint="Enter a description for complaint" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
