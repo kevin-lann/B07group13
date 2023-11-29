@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">B07 project</string>
-
-    <string name="see_all">see all</string>
-    <string name="title1">Recent Announcements</string>
-    <string name="title2">Upcoming Events</string>
-    <string name="checkPost">Check POSt</string>
-    <string name="complaint">Submit Complaint</string>
-</resources>
