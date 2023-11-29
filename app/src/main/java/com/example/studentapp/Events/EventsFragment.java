@@ -47,7 +47,7 @@ public class EventsFragment extends Fragment{
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        adapter = new EventsUserAdapter(getContext(), eventList, getActivity().getSupportFragmentManager());
+        adapter = new EventsUserAdapter(getContext(), eventList);
 
         model.getUserEvents(MainActivity.currUser).thenAccept(res -> {
             try {
@@ -75,12 +75,12 @@ public class EventsFragment extends Fragment{
     // set up arraylist of Event objects for the recyclerview from given
     // list of event ids.
     private void setupEventList(@NonNull ArrayList<String> eventIds) throws ExecutionException, InterruptedException {
+        Log.w("eventTest", "eventIds size: " + eventIds.size() );
         for(String id : eventIds) {
-            Log.w("eventTest", "id: " + id);
             model.getEventFromId(id).thenAccept( res -> {
                 eventList.add(res);
+                recyclerView.setAdapter(new EventsUserAdapter(getContext(), eventList));
             });
         }
-        recyclerView.setAdapter(adapter);
     }
 }

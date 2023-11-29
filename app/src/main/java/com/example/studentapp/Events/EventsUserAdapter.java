@@ -19,12 +19,11 @@ import java.util.ArrayList;
 public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.eventViewHolder>{
 
     private Context context;
-    private static FragmentManager fragmentManager;
+    //private static FragmentManager fragmentManager;
     private ArrayList<Event> eventsList;
 
-    public EventsUserAdapter(Context context, ArrayList<Event> eventsList, FragmentManager fragmentManager) {
+    public EventsUserAdapter(Context context, ArrayList<Event> eventsList) {
         this.context = context;
-        this.fragmentManager = fragmentManager;
         this.eventsList = eventsList;
     }
 
@@ -39,6 +38,9 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
     public void onBindViewHolder(@NonNull eventViewHolder holder, int position) {
         Event event = eventsList.get(position);
         holder.eventName.setText(event.eventName);
+        holder.description.setText(event.eventDescription);
+        holder.location.setText(event.eventLocation);
+        holder.organizer.setText(event.organizer);
         // TO DO
         // Set onClickListener for card button so that can send to event page
     }
@@ -51,11 +53,14 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
     // Holds a view describing one instance of the recyclerview
     public static class eventViewHolder extends RecyclerView.ViewHolder{
 
-        TextView eventName, organizer, description, time, date;
+        TextView eventName, organizer, description, location, time, date;
 
         public eventViewHolder(@NonNull View eventView) {
             super(eventView);
             eventName = eventView.findViewById(R.id.event_name);
+            description = eventView.findViewById(R.id.event_description);
+            location = eventView.findViewById(R.id.event_location);
+            organizer = eventView.findViewById(R.id.organizer);
         }
 
     }

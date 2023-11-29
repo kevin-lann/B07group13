@@ -39,7 +39,6 @@ public class EventsModel {
 
         ref = db.getReference().child("UserInfo").child(user.getUserType())
                 .child(user.getUsername()).child(event_list_name);
-
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
@@ -88,7 +87,7 @@ public class EventsModel {
                 String srt = String.valueOf(snapshot.child("time_start").getValue());
                 int[] time_start = {
                         Integer.parseInt(srt.substring(0, srt.indexOf(':'))),
-                        Integer.parseInt(srt.substring(srt.indexOf(':') + 1, 5))
+                        Integer.parseInt(srt.substring(srt.indexOf(':') + 1, srt.length()))
                 };
 
                 String date_arr[] = date.split("-");
