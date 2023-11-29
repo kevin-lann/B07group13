@@ -1,6 +1,7 @@
 package com.example.studentapp.Login;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,7 +67,7 @@ public class LoginFragment extends Fragment {
 
     public void loginSuccess() {
         NavHostFragment.findNavController(LoginFragment.this)
-                .navigate(R.id.action_LoginFragment_to_testFragment);
+                .navigate(R.id.action_LoginFragment_to_studentDashboard);
     }
 
     public void loginUnsuccess() {
