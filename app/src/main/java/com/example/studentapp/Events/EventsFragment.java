@@ -20,6 +20,7 @@ import com.example.studentapp.databinding.FragmentThirdBinding;
 import com.example.studentapp.objects.Event;
 
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 public class EventsFragment extends Fragment{
@@ -39,7 +40,7 @@ public class EventsFragment extends Fragment{
             Bundle savedInstanceState
     ) {
 
-        eventList = new ArrayList<Event>();
+        eventList = new ArrayList<>();
 
         View view = inflater.inflate(R.layout.events_fragment, container, false);
         recyclerView = view.findViewById(R.id.event_list);
@@ -58,10 +59,6 @@ public class EventsFragment extends Fragment{
             }
         });
 
-
-
-
-
         return view;
     }
 
@@ -79,7 +76,10 @@ public class EventsFragment extends Fragment{
     // list of event ids.
     private void setupEventList(@NonNull ArrayList<String> eventIds) throws ExecutionException, InterruptedException {
         for(String id : eventIds) {
-            eventList.add(model.getEventFromId(id).get());
+            Log.w("eventTest", "id: " + id);
+            model.getEventFromId(id).thenAccept( res -> {
+                eventList.add(res);
+            });
         }
         recyclerView.setAdapter(adapter);
     }

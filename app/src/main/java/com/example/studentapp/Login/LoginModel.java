@@ -29,10 +29,9 @@ public class LoginModel {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String passwordDb = String.valueOf(snapshot.child("password").getValue());
-
+                //Log.w("eventTest", "password:" + passwordDb);
                 if(passwordDb.equals(password)) {
                     cf.complete(true);
-                    // Log.w("cccc", "password:" + passwordDb);
                 }
                 cf.complete(false);
             }

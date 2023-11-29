@@ -15,6 +15,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 public class EventsModel {
 
@@ -23,6 +24,8 @@ public class EventsModel {
     public EventsModel() {
         db = FirebaseDatabase.getInstance("https://b07-group13-default-rtdb.firebaseio.com");
     }
+
+
 
     // return arraylist of all of a given user's events
     // If user is AdminUser, then this returns their Created Events
@@ -37,7 +40,7 @@ public class EventsModel {
         ref = db.getReference().child("UserInfo").child(user.getUserType())
                 .child(user.getUsername()).child(event_list_name);
 
-        ref.addValueEventListener(new ValueEventListener() {
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
 
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -56,15 +59,15 @@ public class EventsModel {
         return res;
     }
 
+    /**
+     * Retrieves event specified by id in the database
+     */
     public CompletableFuture<Event> getEventFromId(String id) {
-
-        CompletableFuture<Event> res = new CompletableFuture<>();
+        CompletableFuture<Event> cf = new CompletableFuture<>();
         DatabaseReference query = db.getReference().child("Events").child(id);
-        Log.w("eventTest", "outside");
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 Log.w("eventTest", "inside");
                 Event event;
                 String date = String.valueOf(snapshot.child("date").getValue());
@@ -109,19 +112,17 @@ public class EventsModel {
                         time_end,
                         event_date);
 
-                Log.w("eventTest", event.toString());
-
-                res.complete(event);
+                cf.complete(event);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Log.w("eventTest", "fail");
-                res.complete(null);
+                cf.complete(null);
             }
         });
 
-        return res;
+        return cf;
     }
+
 }
 
