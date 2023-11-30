@@ -2,6 +2,8 @@ package com.example.studentapp;
 
 import android.os.Bundle;
 
+import com.example.studentapp.objects.AdminUser;
+import com.example.studentapp.objects.StudentUser;
 import com.example.studentapp.objects.User;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -48,21 +50,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Add check for if currUser is student or admin to figure out which menu to create
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(currUser != null && currUser.getUserType() == "Student") {
+            // set to student menu bar and add onclicklisteners d
+        }
+        else if(currUser.getUserType() == "Admin") {
+            // set to Admin menu bar and add onclicklisteners
         }
 
         return super.onOptionsItemSelected(item);

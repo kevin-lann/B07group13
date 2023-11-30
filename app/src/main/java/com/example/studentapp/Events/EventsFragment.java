@@ -25,10 +25,10 @@ import java.util.concurrent.ExecutionException;
 
 public class EventsFragment extends Fragment{
     private EventsFragmentBinding binding;
-    RecyclerView recyclerView;
-    EventsUserAdapter adapter;
-    ArrayList<Event> eventList;
-    EventsModel model;
+    RecyclerView recyclerView1, recyclerView2;
+    EventsUserAdapter adapter1, adapter2;
+    ArrayList<Event> eventList1, eventList2;
+    private EventsModel model;
 
     public EventsFragment() {
          model = new EventsModel();
@@ -40,23 +40,28 @@ public class EventsFragment extends Fragment{
             Bundle savedInstanceState
     ) {
 
-        eventList = new ArrayList<>();
+        eventList1 = new ArrayList<>();
+        eventList2 = new ArrayList<>();
 
         View view = inflater.inflate(R.layout.events_fragment, container, false);
-        recyclerView = view.findViewById(R.id.event_list);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        adapter = new EventsUserAdapter(getContext(), eventList);
+        recyclerView1 = view.findViewById(R.id.event_list);
+        recyclerView1.setHasFixedSize(true);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        recyclerView2 = view.findViewById(R.id.event_list_2);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(view.getContext()));
+
+        adapter1 = new EventsUserAdapter(getContext(), eventList1, model);
+        adapter2 = new EventsUserAdapter(getContext(), eventList2, model);
 
         model.getUserEvents(MainActivity.currUser).thenAccept(res -> {
-            try {
-                setupEventList(res);
-            } catch (ExecutionException e) {
-                throw new RuntimeException(e);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            setupEventList(res, eventList1, recyclerView1);
+        });
+
+        model.getAllEvents().thenAccept(res -> {
+            setupEventList(res, eventList2, recyclerView2);
         });
 
         return view;
@@ -74,13 +79,13 @@ public class EventsFragment extends Fragment{
 
     // set up arraylist of Event objects for the recyclerview from given
     // list of event ids.
-    private void setupEventList(@NonNull ArrayList<String> eventIds) throws ExecutionException, InterruptedException {
-        Log.w("eventTest", "eventIds size: " + eventIds.size() );
+    private void setupEventList(@NonNull ArrayList<String> eventIds, ArrayList<Event> eventList, RecyclerView rv) {
         for(String id : eventIds) {
             model.getEventFromId(id).thenAccept( res -> {
                 eventList.add(res);
-                recyclerView.setAdapter(new EventsUserAdapter(getContext(), eventList));
+                rv.setAdapter(new EventsUserAdapter(getContext(), eventList, model));
             });
         }
     }
+
 }

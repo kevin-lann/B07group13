@@ -29,6 +29,10 @@
     <string name="checkPost">Check POSt</string>
     <string name="complaint">Submit Complaint</string>
 
+    <!-- Complaints page-->
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+
     <string name="lorem_ipsum">
         lmao
     </string>

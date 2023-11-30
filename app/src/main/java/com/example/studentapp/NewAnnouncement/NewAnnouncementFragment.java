@@ -51,7 +51,6 @@ public class NewAnnouncementFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Announcement a = setupNewAnnouncement();
-                Log.w("AnnouncementTest", a.toString());
                 model.postAnnouncement(a);
             }
         });
