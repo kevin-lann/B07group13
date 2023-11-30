@@ -50,7 +50,6 @@ public class StudentDashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //在程序编译的时候这个方法会把layout（基本就是整个页面的框架）读出来
         binding = StudentDashboardFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
@@ -77,7 +76,7 @@ public class StudentDashboardFragment extends Fragment {
         seeAnnouncemnet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Test2", Toast.LENGTH_SHORT).show();
             }
         });
 
