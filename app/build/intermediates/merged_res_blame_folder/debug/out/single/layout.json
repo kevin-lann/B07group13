@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.example.studentapp-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/event_display.xml",
+        "source": "com.example.studentapp-main-50:/layout/event_display.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/login_fragment.xml",
+        "source": "com.example.studentapp-main-50:/layout/login_fragment.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/events_fragment.xml",
+        "source": "com.example.studentapp-main-50:/layout/events_fragment.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/toolbar.xml",
+        "source": "com.example.studentapp-main-50:/layout/toolbar.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/content_main.xml",
+        "source": "com.example.studentapp-main-50:/layout/content_main.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/fragment_third.xml",
+        "source": "com.example.studentapp-main-50:/layout/fragment_third.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/student_dashboard_fragment.xml",
+        "source": "com.example.studentapp-main-50:/layout/student_dashboard_fragment.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/new_announcement_fragment.xml",
+        "source": "com.example.studentapp-main-50:/layout/new_announcement_fragment.xml"
+    },
+    {
+        "merged": "com.example.studentapp-mergeDebugResources-47:/layout/signup_fragment.xml",
+        "source": "com.example.studentapp-main-50:/layout/signup_fragment.xml"
+    }
+]
