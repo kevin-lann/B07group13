@@ -68,6 +68,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event3" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/check_post"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:background="#9E9E9E"
+        android:text="@string/checkPost"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/seeEvents"
+        app:layout_constraintTop_toBottomOf="@+id/event3" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submit_complaint"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:background="#9E9E9E"
+        android:text="Submit Complaint"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/check_post"
+        app:layout_constraintTop_toBottomOf="@+id/event3" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/announcement1"
         android:layout_width="0dp"

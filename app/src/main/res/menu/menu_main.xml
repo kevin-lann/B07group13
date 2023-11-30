@@ -3,8 +3,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.studentapp.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_check_post"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Check POSt"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_submit_complaint"
+        android:orderInCategory="100"
+        android:title="Submit Complaint"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_announcements"
+        android:orderInCategory="100"
+        android:title="Announcements"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_events"
+        android:orderInCategory="100"
+        android:title="Events"
+        app:showAsAction="never" />
+
+    <!-- Admin stuff -->
+    <item
+        android:id="@+id/action_my_announcements"
+        android:orderInCategory="100"
+        android:title="My Announcements"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_my_events"
+        android:orderInCategory="100"
+        android:title="My Events"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_view_complaints"
+        android:orderInCategory="100"
+        android:title="View Complaints"
+        app:showAsAction="never" />
+
 </menu>

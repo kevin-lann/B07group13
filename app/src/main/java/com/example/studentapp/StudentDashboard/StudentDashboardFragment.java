@@ -88,6 +88,22 @@ public class StudentDashboardFragment extends Fragment {
             }
         });
 
+        binding.submitComplaint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(StudentDashboardFragment.this)
+                        .navigate(R.id.action_studentDashboardFragment_to_SubmitComplaint);
+            }
+        });
+
+        binding.checkPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(StudentDashboardFragment.this)
+                        .navigate(R.id.action_studentDashboardFragment_to_Events); // TODO replace
+            }
+        });
+
         announcement1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

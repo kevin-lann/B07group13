@@ -8,8 +8,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.studentapp.MainActivity;
+import com.example.studentapp.R;
+import com.example.studentapp.StudentDashboard.StudentDashboardFragment;
 import com.example.studentapp.databinding.ComplaintsFragmentBinding;
 
 public class ComplaintsFragment extends Fragment {
@@ -36,6 +39,11 @@ public class ComplaintsFragment extends Fragment {
             String description = binding.editComplaintDesc.getText().toString();
 
             presenter.submitComplaint(username, title, description);
+        });
+
+        binding.buttonCancel.setOnClickListener(v -> {
+            NavHostFragment.findNavController(ComplaintsFragment.this)
+                    .navigate(R.id.action_SubmitComplaint_to_studentDashboardFragment);
         });
     }
 
