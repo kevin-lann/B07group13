@@ -54,4 +54,14 @@ Plans:
 
 Nov 28
 
+What was discussed:
+
+- Merging parts together
+- Reusing some fragments for adminside
+- provisioning new tasks
+
+Plans
+
+- Get all parts done by friday so can merge and test over weekend
+- Finish backends for previous few weeks and do last 3 or so user stories
 
