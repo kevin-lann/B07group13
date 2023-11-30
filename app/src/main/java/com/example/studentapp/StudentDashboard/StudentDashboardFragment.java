@@ -77,7 +77,7 @@ public class StudentDashboardFragment extends Fragment {
         seeAnnouncemnet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Hello Armaan!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
             }
         });
 
