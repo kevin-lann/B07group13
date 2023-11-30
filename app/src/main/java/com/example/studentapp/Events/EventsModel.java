@@ -155,9 +155,18 @@ public class EventsModel {
     public void eventRSVP(Event event) {
         String id = new Integer(event.eventId).toString();
         String username = MainActivity.currUser.getUsername();
+
+        // Increment event num_attendees
+
+        // If max_attendees not exceeded and user not already RSVP'd, then add event
+        // to user's RSVP_Events list
         DatabaseReference ref = db.getReference().child("UserInfo")
                 .child("Student").child(username).child("RSVP_Events").child(id);
         ref.setValue(event.eventName);
+
+        // If exceeded, then call event fragment to display toast msg
+
+
     }
 
 }

@@ -53,8 +53,8 @@ public class EventsFragment extends Fragment{
         recyclerView2.setHasFixedSize(true);
         recyclerView2.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
-        adapter1 = new EventsUserAdapter(getContext(), eventList1, model);
-        adapter2 = new EventsUserAdapter(getContext(), eventList2, model);
+        adapter1 = new EventsUserAdapter(getContext(), eventList1, this);
+        adapter2 = new EventsUserAdapter(getContext(), eventList2, this);
 
         model.getUserEvents(MainActivity.currUser).thenAccept(res -> {
             setupEventList(res, eventList1, recyclerView1);
@@ -83,9 +83,13 @@ public class EventsFragment extends Fragment{
         for(String id : eventIds) {
             model.getEventFromId(id).thenAccept( res -> {
                 eventList.add(res);
-                rv.setAdapter(new EventsUserAdapter(getContext(), eventList, model));
+                rv.setAdapter(new EventsUserAdapter(getContext(), eventList, this));
             });
         }
+    }
+
+    public EventsModel getEventsModel() {
+        return model;
     }
 
 }

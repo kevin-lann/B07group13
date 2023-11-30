@@ -1,5 +1,10 @@
 package com.example.studentapp.objects;
 
+import android.annotation.SuppressLint;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Event {
 
     public int eventId;
@@ -41,6 +46,30 @@ public class Event {
 
     public String getFormattedDate() {
         return date[0] + "-" + date[1] + "-" + date[2];
+    }
+
+    @SuppressLint("NewApi")
+    public boolean hasPassed() {
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
+
+        // check if event day has passed already
+        if(date.getYear() > this.date[2] ||
+                date.getYear() == this.date[2] && date.getMonthValue() > this.date[0] ||
+                date.getYear() == this.date[2] && date.getMonthValue() == this.date[0] && date.getDayOfMonth() > this.date[1]) {
+            return true;
+        }
+        // Check if event hour has passed already
+        if(date.getYear() == this.date[2] && date.getMonthValue() == this.date[0] && date.getDayOfMonth() == this.date[1]
+        && time.getHour() > this.endTime[0]) {
+            return true;
+        }
+        // Check if event minute has passed already
+        if(date.getYear() == this.date[2] && date.getMonthValue() == this.date[0] && date.getDayOfMonth() == this.date[1]
+                && time.getHour() == this.endTime[0] && time.getMinute() > this.endTime[1]) {
+            return true;
+        }
+        return false;
     }
 
     @Override

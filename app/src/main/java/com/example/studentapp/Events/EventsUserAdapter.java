@@ -1,6 +1,7 @@
 package com.example.studentapp.Events;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -10,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.studentapp.NewAnnouncement.NewAnnouncementFragment;
 import com.example.studentapp.R;
 import com.example.studentapp.objects.Event;
 
@@ -23,11 +26,13 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
     //private static FragmentManager fragmentManager;
     private ArrayList<Event> eventsList;
     private EventsModel model;
+    private EventsFragment fragment;
 
-    public EventsUserAdapter(Context context, ArrayList<Event> eventsList, EventsModel model) {
+    public EventsUserAdapter(Context context, ArrayList<Event> eventsList, EventsFragment fragment) {
         this.context = context;
         this.eventsList = eventsList;
-        this.model = model;
+        this.fragment = fragment;
+        this.model = fragment.getEventsModel();
     }
 
     @NonNull
@@ -44,15 +49,28 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
         holder.eventName.setText(event.eventName);
         holder.description.setText(event.eventDescription);
         holder.eventInfo.setText("Where: " + event.eventLocation
-                + " / When: " + event.getFormattedDate()
+                + "\n When: " + event.getFormattedDate()
                 + " @ " + event.getFormattedTime());
         holder.organizer.setText("Event organized by " + event.organizer);
 
-        // RSVP For event
+        boolean event_passed = event.hasPassed();
+        // Check whether event has passed or not to determine if RSVP or RATE
+        holder.RSVP_Or_Rate.setText( event_passed ? "Rate" : "RSVP");
+
         holder.RSVP_Or_Rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                model.eventRSVP(event);
+                if(event_passed) {
+                    /** TODO replace with action to rateEvent page
+                    NavHostFragment.findNavController(fragment)
+                            .navigate(R.id.action_eventsFragment_to_rateEvent);
+                     */
+                    Toast.makeText(context,"Send to rate event page.", Toast.LENGTH_SHORT);
+                }
+                else {
+                    model.eventRSVP(event);
+                    Toast.makeText(context,"RSVP Successful!", Toast.LENGTH_LONG);
+                }
             }
         });
     }
