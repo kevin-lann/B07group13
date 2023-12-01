@@ -5,4 +5,7 @@
     <color name="light_grey">#EEEEEE</color>
     <color name="buttons">#6750a4</color>
     <color name="transparent">#7A888888</color>
+
+    <color name="student_dash">#03A9F4</color>
+    <color name="admin_dash">#04A1A1</color>
 </resources>

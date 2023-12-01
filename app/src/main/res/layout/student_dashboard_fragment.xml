@@ -13,8 +13,8 @@
         android:padding="0dp">
 
         <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
+            android:id="@+id/dash_toolbar"
+            layout="@layout/dash_toolbar"
             android:layout_width="0dp"
             android:layout_height="160dp"
             android:visibility="visible"
@@ -32,7 +32,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            app:layout_constraintTop_toBottomOf="@+id/dash_toolbar" />
 
         <TextView
             android:id="@+id/textView3"
@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/seeEvents" />
 
         <Space
-            android:layout_height = "1dp"
+            android:layout_height = "3dp"
             android:layout_width = "match_parent"
             android:background="@color/transparent"
             app:layout_constraintTop_toBottomOf="@id/seeEvents"
@@ -78,6 +78,17 @@
             app:layout_constraintTop_toBottomOf="@+id/announcement3" />
 
         <Button
+            android:id="@+id/newAnnouncement"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:text="+"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/announcement3" />
+
+        <Button
             android:id="@+id/seeEvents"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -88,6 +99,18 @@
             app:layout_constraintTop_toBottomOf="@id/event3"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <Button
+            android:id="@+id/newEvent"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"
+            android:text="+"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event3" />
+
+        <!-- This button switches to view complaints if user is admin -->
         <Button
             android:id="@+id/check_post"
             android:layout_width="wrap_content"

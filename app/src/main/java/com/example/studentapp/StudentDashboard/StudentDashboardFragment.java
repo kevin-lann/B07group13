@@ -1,20 +1,21 @@
 package com.example.studentapp.StudentDashboard;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.studentapp.Login.LoginFragment;
+import com.example.studentapp.MainActivity;
 import com.example.studentapp.R;
 import com.example.studentapp.databinding.StudentDashboardFragmentBinding;
 import com.google.firebase.FirebaseApp;
@@ -26,20 +27,15 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.DatabaseError;
 
 public class StudentDashboardFragment extends Fragment {
-    private Toolbar toolbar;
-    private Button seeAnnouncemnet;
-    private Button seeEvent;
-    private CardView announcement1;
-    private TextView ann1Topic;
-    private TextView ann1Sender;
-    private TextView ann1Date;
 
     private StudentDashboardFragmentBinding binding;
 
-    private DatabaseReference ann1Ref;
+    private DatabaseReference db;
+
+    private int checkPostButtonAction;
 
     public StudentDashboardFragment() {
-        ann1Ref = FirebaseDatabase
+        db = FirebaseDatabase
                 .getInstance("https://b07-group13-default-rtdb.firebaseio.com")
                 .getReference()
                 .child("Announcements");
@@ -56,14 +52,7 @@ public class StudentDashboardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ann1Topic = binding.announceTopic1;
-        ann1Sender = binding.sender1;
-        ann1Date = binding.date1;
-
-        seeAnnouncemnet = binding.seeAnnouncements;
-        seeEvent = binding.seeEvents;
-
-        announcement1 = binding.announcement1;
+        setupDashboard(view);
 
         /**
         //set the toolbar
@@ -73,14 +62,14 @@ public class StudentDashboardFragment extends Fragment {
         getSupportActionBar().setTitle(null);
          **/
 
-        seeAnnouncemnet.setOnClickListener(new View.OnClickListener() {
+        binding.seeAnnouncements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "Test2", Toast.LENGTH_SHORT).show();
             }
         });
 
-        seeEvent.setOnClickListener(new View.OnClickListener() {
+        binding.seeEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(StudentDashboardFragment.this)
@@ -96,30 +85,31 @@ public class StudentDashboardFragment extends Fragment {
             }
         });
 
+        // action depending on checkPostButtonAction
         binding.checkPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(StudentDashboardFragment.this)
-                        .navigate(R.id.action_studentDashboardFragment_to_Events); // TODO replace
+                        .navigate(checkPostButtonAction);
             }
         });
 
-        announcement1.setOnClickListener(new View.OnClickListener() {
+        binding.announcement1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getActivity(), "More details coming soon", Toast.LENGTH_SHORT).show();
             }
         });
 
-        ann1Ref.addValueEventListener(new ValueEventListener() {
+        db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 AnnouncementBox announcement1 = snapshot.child("announcement1").getValue(AnnouncementBox.class);
 
                 if (announcement1 != null) {
-                    ann1Topic.setText(announcement1.getTopic());
-                    ann1Sender.setText(announcement1.getSender());
-                    ann1Date.setText(announcement1.getDate());
+                    binding.announceTopic1.setText(announcement1.getTopic());
+                    binding.sender1.setText(announcement1.getSender());
+                    binding.date1.setText(announcement1.getDate());
                 }
             }
 
@@ -130,4 +120,39 @@ public class StudentDashboardFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * Make appropriate changes to dashboard depending on if user is admin or student
+     */
+    private void setupDashboard(View view) {
+        if(MainActivity.currUser.getUserType().equals("Student")) {
+            view.findViewById(R.id.dash_toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.student_dash));
+            getActivity().findViewById(R.id.toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.student_dash));
+            binding.newAnnouncement.setVisibility(GONE);
+            binding.newEvent.setVisibility(GONE);
+            binding.submitComplaint.setVisibility(VISIBLE);
+
+            binding.checkPost.setText("Check POSt");
+
+            // TODO uncomment when checkPost ready
+            // checkPostButtonAction = R.id.action_studentDashboardFragment_to_checkPost;
+        }
+
+        if(MainActivity.currUser.getUserType().equals("Admin")) {
+            view.findViewById(R.id.dash_toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.admin_dash));
+            getActivity().findViewById(R.id.toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.admin_dash));
+
+            binding.newAnnouncement.setVisibility(VISIBLE);
+            binding.newEvent.setVisibility(VISIBLE);
+            binding.submitComplaint.setVisibility(GONE);
+
+            binding.checkPost.setText("View Complaints");
+
+            // TODO uncomment when view complaints ready
+            //checkPostButtonAction = R.id.action_studentDashBoardFragment_to_viewComplaints;
+        }
+    }
+
 }
+
+
