@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +30,13 @@ public class ViewComplaintsFragment extends Fragment {
     private ViewComplaintAdapter complaintAdapter;
     private List<Complaint> complaintList;
 
-    public ViewComplaintsFragment() {
+    private DatabaseReference db;
 
+    public ViewComplaintsFragment() {
+        db = FirebaseDatabase
+                .getInstance("https://b07-group13-default-rtdb.firebaseio.com")
+                .getReference()
+                .child("Complaints");
     }
 
     @Override
@@ -57,13 +63,9 @@ public class ViewComplaintsFragment extends Fragment {
     private List<Complaint> getComplaints() {
         final List<Complaint> complaints = new ArrayList<>();
 
-        FirebaseDatabase db = FirebaseDatabase.getInstance();
-
-        DatabaseReference complaintsRef = db.getReference("Complaints");
-
-        complaintsRef.addValueEventListener(new ValueEventListener() {
+        db.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
                 complaints.clear(); // Clear the existing list to avoid duplicates
 
                 // Iterate through each user
