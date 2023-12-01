@@ -2,9 +2,12 @@ package com.example.studentapp.StudentDashboard;
 
 import androidx.annotation.NonNull;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity;
 =======
 >>>>>>> parent of 7864e07 (Finished Admin Dashboard)
+=======
+>>>>>>> parent of 1c8b2c6 (Create Admin dashboard fragment)
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -55,9 +58,6 @@ public class StudentDashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = StudentDashboardFragmentBinding.inflate(inflater, container, false);
-
-        ((AppCompatActivity) requireActivity()).getSupportActionBar().hide();
-
         return binding.getRoot();
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {

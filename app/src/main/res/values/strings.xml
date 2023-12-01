@@ -24,14 +24,10 @@
 
     <!-- Dashboard page -->
     <string name="see_all">see all</string>
-    <string name="make_new">new</string>
-    <string name="student_title1">Recent Announcements</string>
-    <string name="student_title2">Upcoming Events</string>
-    <string name="admin_title1">My Recent Announcements</string>
-    <string name="admin_title2">My Upcoming Events</string>
+    <string name="title1">Recent Announcements</string>
+    <string name="title2">Upcoming Events</string>
     <string name="checkPost">Check POSt</string>
     <string name="complaint">Submit Complaint</string>
-    <string name="view_complaint">View Complaints</string>
 
     <!-- Complaints page-->
     <string name="submit">Submit</string>
@@ -40,6 +36,4 @@
     <string name="lorem_ipsum">
         lmao
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

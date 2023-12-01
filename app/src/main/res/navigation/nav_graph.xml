@@ -21,8 +21,8 @@
             android:id="@+id/action_LoginFragment_to_studentDashboard"
             app:destination="@id/studentDashboardFragment" />
         <action
-            android:id="@+id/action_LoginFragment_to_admin_dashboard"
-            app:destination="@id/admin_dashboard_fragment" />
+            android:id="@+id/action_LoginFragment_to_testFragment"
+            app:destination="@id/testFragment" />
     </fragment>
     <fragment
         android:id="@+id/SignupFragment"
@@ -45,6 +45,15 @@
 
         <action
             android:id="@+id/action_ThirdFragment_to_FirstFragment"
+            app:destination="@id/LoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.example.studentapp.StudentDashboard.StudentDashboardFragment"
+        android:label="test fragment"
+        tools:layout = "@layout/student_dashboard_fragment">
+        <action
+            android:id="@+id/action_testFragment_to_Login"
             app:destination="@id/LoginFragment" />
     </fragment>
 
@@ -78,15 +87,6 @@
             android:id="@+id/action_SubmitComplaint_to_studentDashboardFragment"
             app:destination="@id/studentDashboardFragment" />
 
-    </fragment>
-    <fragment
-        android:id="@+id/admin_dashboard_fragment"
-        android:name="com.example.studentapp.StudentDashboard.admin_dashboard_fragment"
-        android:label="fragment_admin_dashboard_fragment"
-        tools:layout="@layout/admin_dashboard_fragment" >
-        <action
-            android:id="@+id/action_admin_dashboard_fragment_to_LoginFragment"
-            app:destination="@id/LoginFragment" />
     </fragment>
 
 </navigation>
