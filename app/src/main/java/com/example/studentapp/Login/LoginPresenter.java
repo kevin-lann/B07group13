@@ -17,20 +17,21 @@ public class LoginPresenter {
     }
 
     public void performLogin(String username, String password, String usertype) {
-        model.queryDB(username, password, usertype).thenAccept( success -> {
-            if(success) {
-                // set main activity's curr user to new User
-                if(usertype.equals("Admin")) {
+        model.queryDB(username, password, usertype).whenComplete((result, error) -> {
+            if (error != null) {
+                frag.loginUnsuccess();
+                Log.e("LoginPresenter", "Error during login: " + error.getMessage());
+            } else if (result) {
+                if (usertype.equals("Admin")) {
                     MainActivity.currUser = new AdminUser(username, password);
-                }
-                else {
+                } else {
                     MainActivity.currUser = new StudentUser(username, password);
                 }
                 frag.loginSuccess();
-            }
-            else {
+            } else {
                 frag.loginUnsuccess();
             }
         });
     }
+
 }

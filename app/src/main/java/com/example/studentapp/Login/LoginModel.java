@@ -23,17 +23,17 @@ public class LoginModel {
     }
 
     public CompletableFuture<Boolean> queryDB(String username, String password, String usertype) {
-        CompletableFuture<Boolean> cf = new CompletableFuture<Boolean>();
+        CompletableFuture<Boolean> cf = new CompletableFuture<>();
         DatabaseReference query = db.getReference().child("UserInfo").child(usertype).child(username);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String passwordDb = String.valueOf(snapshot.child("password").getValue());
-                //Log.w("eventTest", "password:" + passwordDb);
                 if(passwordDb.equals(password)) {
                     cf.complete(true);
+                } else {
+                    cf.complete(false);
                 }
-                cf.complete(false);
             }
 
             @Override
