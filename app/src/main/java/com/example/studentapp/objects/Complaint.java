@@ -10,4 +10,19 @@ public class Complaint {
         this.complaintDetails = complaintDetails;
     }
 
+    public String getComplaintTitle() {
+        return complaintTitle;
+    }
+
+    public void setComplaintTitle(String complaintTitle) {
+        this.complaintTitle = complaintTitle;
+    }
+
+    public String getComplaintDetails() {
+        return complaintDetails;
+    }
+
+    public void setComplaintDetails(String complaintDetails) {
+        this.complaintDetails = complaintDetails;
+    }
 }
