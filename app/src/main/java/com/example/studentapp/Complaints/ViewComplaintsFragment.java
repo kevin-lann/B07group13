@@ -26,7 +26,7 @@ import java.util.List;
 public class ViewComplaintsFragment extends Fragment {
 
     private RecyclerView recyclerView;
-    private ComplaintAdapter complaintAdapter;
+    private ViewComplaintAdapter complaintAdapter;
     private List<Complaint> complaintList;
 
     public ViewComplaintsFragment() {
@@ -45,7 +45,7 @@ public class ViewComplaintsFragment extends Fragment {
         complaintList = getComplaints();
 
         // Initialize Adapter
-        complaintAdapter = new ComplaintAdapter(complaintList);
+        complaintAdapter = new ViewComplaintAdapter(complaintList);
 
         // Set Adapter to RecyclerView
         recyclerView.setAdapter(complaintAdapter);
