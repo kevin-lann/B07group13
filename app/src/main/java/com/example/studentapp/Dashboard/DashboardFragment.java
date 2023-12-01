@@ -87,7 +87,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(DashboardFragment.this)
-                        .navigate(checkPostButtonAction);
+                        .navigate(R.id.action_dashboardFragment_to_viewComplaintsFragment);
             }
         });
 

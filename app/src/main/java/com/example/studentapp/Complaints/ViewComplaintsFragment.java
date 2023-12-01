@@ -72,13 +72,19 @@ public class ViewComplaintsFragment extends Fragment {
                     complaints.add(complaint);
                 }
 
+                // Set the new data to the adapter
+                complaintList.clear();
+                complaintList.addAll(complaints);
+
                 // Notify the adapter that data has changed
-                complaintAdapter.notifyDataSetChanged();
+                if(complaintAdapter != null){
+                    complaintAdapter.notifyDataSetChanged();
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.e("ViewComplaintsFragment", "Error getting data", databaseError.toException());
             }
         });
 
