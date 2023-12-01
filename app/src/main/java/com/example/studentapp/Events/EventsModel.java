@@ -1,8 +1,6 @@
 package com.example.studentapp.Events;
 
-import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -23,13 +21,9 @@ import java.util.concurrent.ExecutionException;
 public class EventsModel {
 
     FirebaseDatabase db;
-    private Long tmp_max_attendees;
-    private Long tmp_num_attendees;
-    private EventsFragment fragment;
 
-    public EventsModel(EventsFragment fragment) {
+    public EventsModel() {
         db = FirebaseDatabase.getInstance("https://b07-group13-default-rtdb.firebaseio.com");
-        this.fragment = fragment;
     }
 
     /**
@@ -162,82 +156,17 @@ public class EventsModel {
         String id = new Integer(event.eventId).toString();
         String username = MainActivity.currUser.getUsername();
 
-        alreadyRSVP(id).thenAccept( alrRSVP -> capacityReached(id).thenAccept(capReached -> {
-            Log.w("eventTest", "check" + alrRSVP + " " + capReached);
-            if(!alrRSVP && !capReached) {
+        // Increment event num_attendees
 
-                // Increment event num_attendees
-                DatabaseReference ref1 = db.getReference().child("Events").child(id);
-                ref1.child("num_attendees").setValue(tmp_num_attendees+1);
+        // If max_attendees not exceeded and user not already RSVP'd, then add event
+        // to user's RSVP_Events list
+        DatabaseReference ref = db.getReference().child("UserInfo")
+                .child("Student").child(username).child("RSVP_Events").child(id);
+        ref.setValue(event.eventName);
 
-                // add event to user's RSVP list
-                DatabaseReference ref2 = db.getReference().child("UserInfo")
-                        .child("Student").child(username).child("RSVP_Events").child(id);
-                ref2.setValue(event.eventName);
-            }
-            else {
-                if(capReached) {
-                    fragment.sendToast("Unable to RSVP - Capacity limit reached");
-                }
-                else if(alrRSVP) {
-                    fragment.sendToast("Already RSVP'd");
-                }
-            }
-        }));
+        // If exceeded, then call event fragment to display toast msg
 
 
-
-    }
-
-    /**
-     * Checks if user is already RSVP'd for given event
-     */
-    private CompletableFuture<Boolean> alreadyRSVP(String id) {
-        String username = MainActivity.currUser.getUsername();
-        CompletableFuture<Boolean> res = new CompletableFuture<>();
-        DatabaseReference query = db.getReference().child("UserInfo").child("Student")
-                .child(username).child("RSVP_Events");
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.child(id).exists()) {
-                    res.complete(true);
-                }
-                res.complete(false);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                res.complete(null);
-            }
-        });
-        return res;
-    }
-
-    /**
-     * Checks if capacity reached for given event
-     */
-    private CompletableFuture<Boolean> capacityReached(String id) {
-        CompletableFuture<Boolean> res = new CompletableFuture<>();
-        DatabaseReference query = db.getReference().child("Events").child(id);
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                tmp_max_attendees = (Long)(snapshot.child("max_attendees").getValue());
-                tmp_num_attendees = (Long)(snapshot.child("num_attendees").getValue());
-                if (tmp_num_attendees.equals(tmp_max_attendees)) {
-                    res.complete(true);
-                }
-
-                res.complete(false);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                res.complete(null);
-            }
-        });
-        return res;
     }
 
 }

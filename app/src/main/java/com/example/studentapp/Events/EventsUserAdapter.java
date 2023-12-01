@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,10 +65,11 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
                     NavHostFragment.findNavController(fragment)
                             .navigate(R.id.action_eventsFragment_to_rateEvent);
                      */
-                    fragment.sendToast("Send to rate event page.");
+                    Toast.makeText(context,"Send to rate event page.", Toast.LENGTH_SHORT);
                 }
                 else {
                     model.eventRSVP(event);
+                    Toast.makeText(context,"RSVP Successful!", Toast.LENGTH_LONG);
                 }
             }
         });
