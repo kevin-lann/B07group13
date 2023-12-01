@@ -6,6 +6,7 @@
     <color name="buttons">#6750a4</color>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <color name="admin_toolbar">#009688</color>
     <color name="student_toolbar">#03A9F4</color>
 =======
@@ -13,4 +14,8 @@
 >>>>>>> parent of 7864e07 (Finished Admin Dashboard)
 =======
 >>>>>>> parent of 1c8b2c6 (Create Admin dashboard fragment)
+=======
+    <color name="admin_toolbar">#009688</color>
+    <color name="student_toolbar">#03A9F4</color>
+>>>>>>> parent of 52e5727 (Commit to fetch)
 </resources>

@@ -2,6 +2,7 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+<<<<<<< HEAD:app/src/main/res/layout/toolbar.xml
 <<<<<<< HEAD
 <<<<<<< HEAD:app/src/main/res/layout/dash_toolbar.xml
     android:background="@color/student_toolbar"
@@ -11,6 +12,9 @@
 =======
     android:background="#03A9F4"
 >>>>>>> parent of 1c8b2c6 (Create Admin dashboard fragment)
+=======
+    android:background="@color/student_toolbar"
+>>>>>>> parent of 52e5727 (Commit to fetch):app/src/main/res/layout/dash_toolbar.xml
     android:elevation="4dp">
 
     <TextView
