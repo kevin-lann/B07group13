@@ -46,8 +46,7 @@ public class ComplaintsFragment extends Fragment {
                     .navigate(R.id.action_SubmitComplaint_to_studentDashboardFragment);
         });
     }
-
-    // Method to handle the success action after complaint submission
+    
     public void complaintSubmissionSuccess(String text) {
         Toast toast = Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT);
         toast.show();
