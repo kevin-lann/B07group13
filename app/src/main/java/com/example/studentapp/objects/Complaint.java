@@ -5,6 +5,10 @@ public class Complaint {
     public String complaintTitle;
     public String complaintDetails;
 
+    public Complaint(){
+
+    }
+
     public Complaint(String complaintTitle, String complaintDetails) {
         this.complaintTitle = complaintTitle;
         this.complaintDetails = complaintDetails;
