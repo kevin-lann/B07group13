@@ -66,10 +66,19 @@ public class ViewComplaintsFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 complaints.clear(); // Clear the existing list to avoid duplicates
 
-                // Iterate through all complaints in the dataSnapshot
-                for (DataSnapshot complaintSnapshot : dataSnapshot.getChildren()) {
-                    Complaint complaint = complaintSnapshot.getValue(Complaint.class);
-                    complaints.add(complaint);
+                // Iterate through each user
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    String userName = userSnapshot.getKey();
+
+                    // Iterate through complaintTitles and complaintDetails under each user
+                    for (DataSnapshot complaintSnapshot : userSnapshot.getChildren()) {
+                        String complaintTitle = complaintSnapshot.child("complaintTitle").getValue(String.class);
+                        String complaintDetails = complaintSnapshot.child("complaintDetails").getValue(String.class);
+
+                        // Create a Complaint object and add it to the list
+                        Complaint complaint = new Complaint(complaintTitle, complaintDetails);
+                        complaints.add(complaint);
+                    }
                 }
 
                 // Set the new data to the adapter
