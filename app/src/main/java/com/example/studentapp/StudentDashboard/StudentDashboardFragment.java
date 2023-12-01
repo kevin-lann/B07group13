@@ -1,7 +1,10 @@
 package com.example.studentapp.StudentDashboard;
 
 import androidx.annotation.NonNull;
+<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity;
+=======
+>>>>>>> parent of 7864e07 (Finished Admin Dashboard)
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;

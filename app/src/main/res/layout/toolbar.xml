@@ -2,7 +2,11 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+<<<<<<< HEAD:app/src/main/res/layout/dash_toolbar.xml
     android:background="@color/student_toolbar"
+=======
+    android:background="#03A9F4"
+>>>>>>> parent of 7864e07 (Finished Admin Dashboard):app/src/main/res/layout/toolbar.xml
     android:elevation="4dp">
 
     <TextView

@@ -4,6 +4,10 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_grey">#EEEEEE</color>
     <color name="buttons">#6750a4</color>
+<<<<<<< HEAD
     <color name="admin_toolbar">#009688</color>
     <color name="student_toolbar">#03A9F4</color>
+=======
+    <color name="transparent">#7A888888</color>
+>>>>>>> parent of 7864e07 (Finished Admin Dashboard)
 </resources>

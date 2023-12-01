@@ -10,6 +10,7 @@
     tools:context=".StudentDashboard.StudentDashboardFragment">
 
 
+<<<<<<< HEAD
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
@@ -31,6 +32,29 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+=======
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/title1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+>>>>>>> parent of 7864e07 (Finished Admin Dashboard)
 
     <TextView
         android:id="@+id/textView3"
@@ -56,6 +80,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/announcement3" />
 
+<<<<<<< HEAD
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/seeEvents"
         android:layout_width="wrap_content"
@@ -68,6 +93,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event3" />
+=======
+        <Space
+            android:layout_height = "1dp"
+            android:layout_width = "match_parent"
+            android:background="@color/transparent"
+            app:layout_constraintTop_toBottomOf="@id/seeEvents"
+            app:layout_constraintBottom_toTopOf="@id/textView4"/>
+>>>>>>> parent of 7864e07 (Finished Admin Dashboard)
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/check_post"
@@ -95,6 +128,7 @@
         app:layout_constraintStart_toEndOf="@id/check_post"
         app:layout_constraintTop_toBottomOf="@+id/event3" />
 
+<<<<<<< HEAD
     <androidx.cardview.widget.CardView
         android:id="@+id/announcement1"
         android:layout_width="0dp"
@@ -136,6 +170,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/announceTopic1"
                 app:layout_constraintVertical_bias="0.36" />
+=======
+        <Button
+            android:id="@+id/seeEvents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/see_all"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/event3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/check_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:text="@string/checkPost"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+>>>>>>> parent of 7864e07 (Finished Admin Dashboard)
 
             <TextView
                 android:id="@+id/date1"
