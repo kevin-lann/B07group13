@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Is this an event update? -->
+
     <TextView
         android:id="@+id/text_announcement_headline"
         android:layout_width="wrap_content"

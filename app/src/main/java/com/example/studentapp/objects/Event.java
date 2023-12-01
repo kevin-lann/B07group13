@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Event {
 
@@ -99,6 +101,19 @@ public class Event {
                 "\ntime: " + getFormattedTime() +
                 "\nDate: " + getFormattedDate();
         return ret;
+    }
+
+    public Map<String, String> createMap() {
+        Map<String, String> info = new HashMap<>();
+        info.put("event_name", eventName);
+        info.put("organizer", organizer);
+        info.put("num_attendees", "" + numAttendees);
+        info.put("max_attendees", "" + maxAttendees);
+        info.put("event_location", eventLocation);
+        info.put("event_description", eventDescription);
+        info.put("time_start", startTime[0] + ":" + startTime[1] );
+        info.put("time_end", endTime[0] + ":" + endTime[1] );
+        return info;
     }
 
 }

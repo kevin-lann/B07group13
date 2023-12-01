@@ -13,20 +13,12 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.studentapp.MainActivity;
 import com.example.studentapp.R;
-import com.example.studentapp.Signup.SignupFragment;
-import com.example.studentapp.Signup.SignupModel;
-import com.example.studentapp.Signup.SignupPresenter;
 import com.example.studentapp.databinding.NewAnnouncementFragmentBinding;
-import com.example.studentapp.databinding.SignupFragmentBinding;
 import com.example.studentapp.objects.AdminUser;
 import com.example.studentapp.objects.Announcement;
-import com.example.studentapp.objects.Event;
-import com.example.studentapp.objects.User;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.Date;
 
 public class NewAnnouncementFragment extends Fragment {
     private NewAnnouncementFragmentBinding binding;
