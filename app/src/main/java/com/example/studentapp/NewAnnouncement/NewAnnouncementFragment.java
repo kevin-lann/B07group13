@@ -59,7 +59,7 @@ public class NewAnnouncementFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(NewAnnouncementFragment.this)
-                        .navigate(R.id.action_testFragment_to_Login);
+                        .navigate(R.id.action_admin_dashboard_fragment_to_LoginFragment);
             }
         });
     }

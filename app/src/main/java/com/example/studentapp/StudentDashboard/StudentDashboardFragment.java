@@ -1,6 +1,7 @@
 package com.example.studentapp.StudentDashboard;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -51,6 +52,9 @@ public class StudentDashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = StudentDashboardFragmentBinding.inflate(inflater, container, false);
+
+        ((AppCompatActivity) requireActivity()).getSupportActionBar().hide();
+
         return binding.getRoot();
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
