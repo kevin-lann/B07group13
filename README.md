@@ -6,9 +6,8 @@ Firebase link:
 https://b07-group13-default-rtdb.firebaseio.com/
 
 Wireframes:
-```
 https://drive.google.com/drive/folders/1nDyRmBAPmfCftR0DbaYJHFc3e6O5pREs?usp=sharing
-```
+
 
 **Meeting notes:**
 
@@ -55,4 +54,14 @@ Plans:
 
 Nov 28
 
+What was discussed:
+
+- Merging parts together
+- Reusing some fragments for adminside
+- provisioning new tasks
+
+Plans
+
+- Get all parts done by friday so can merge and test over weekend
+- Finish backends for previous few weeks and do last 3 or so user stories
 
