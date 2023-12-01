@@ -4,32 +4,231 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DFDFDF"
     tools:context=".CheckPOSt">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/previous"
-            app:layout_constraintBottom_toTopOf="@id/textview_second"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textview_second"
-            android:layout_width="wrap_content"
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_second" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="@string/check_post"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:text="@string/check_post_desc"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="@string/check_post_q1"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="350dp"
+            android:layout_height="48dp"
+            android:fontFamily="sans-serif"
+            android:entries="@array/items"/>
+
+        <LinearLayout
+            android:id="@+id/A31Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/A31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/A31"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/A31Input"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:inputType="text"
+                android:hint="@string/GPAHint"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/A67Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/A67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/A67"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/A67Input"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:inputType="text"
+                android:hint="@string/GPAHint"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/A22Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/A22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/A22"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/A22Input"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:inputType="text"
+                android:hint="@string/GPAHint"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/A37Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/A37"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/A37"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/A37Input"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:inputType="text"
+                android:hint="@string/GPAHint"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/A48Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="visible"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/A48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif"
+                android:text="@string/A48"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/A48Input"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="48dp"
+                android:inputType="text"
+                android:hint="@string/GPAHint"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#757575"
+                android:backgroundTint="#858585"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/check"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:backgroundTint="#8E8E8E"
+                app:cornerRadius="0dp" />
+
+            <TextView
+                android:id="@+id/qualifyStatement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text=""
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.core.widget.NestedScrollView>
