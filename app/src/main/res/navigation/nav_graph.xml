@@ -60,7 +60,7 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name = "com.example.studentapp.Dashboard.DashboardFragment"
-        android:label="Dashboard"
+        android:label="Dashboard'"
         tools:layout="@layout/dashboard_fragment">
         <action
             android:id="@+id/action_studentDashboardFragment_to_Events"
@@ -74,6 +74,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_newEvent"
             app:destination="@id/newEventFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewComplaintsFragment"
+            app:destination="@id/viewComplaintsFragment" />
     </fragment>
 
     <fragment
@@ -92,6 +95,13 @@
         <action
             android:id="@+id/action_SubmitComplaint_to_studentDashboardFragment"
             app:destination="@id/dashboardFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewComplaintsFragment"
+        android:name="com.example.studentapp.Complaints.ViewComplaintsFragment"
+        android:label="ViewComplaintsFragment">
 
     </fragment>
 

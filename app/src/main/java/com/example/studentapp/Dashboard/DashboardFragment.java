@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,7 +49,7 @@ public class DashboardFragment extends Fragment {
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        Log.w("dashTest", "first");
         setupDashboard(view);
 
         /**
@@ -73,6 +74,23 @@ public class DashboardFragment extends Fragment {
                         .navigate(R.id.action_studentDashboardFragment_to_Events);
             }
         });
+        Log.w("dashTest", "outside");
+        binding.newAnnouncement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.w("dashTest", "inside");
+                NavHostFragment.findNavController(DashboardFragment.this)
+                        .navigate(R.id.action_dashboardFragment_to_newAnnouncement);
+            }
+        });
+
+        binding.newEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(DashboardFragment.this)
+                        .navigate(R.id.action_dashboardFragment_to_newEvent);
+            }
+        });
 
         binding.submitComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,31 +100,14 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        // action depending on checkPostButtonAction
+        // TODO action depending on checkPostButtonAction
         binding.checkPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(DashboardFragment.this)
-                        .navigate(checkPostButtonAction);
+                        .navigate(R.id.action_dashboardFragment_to_viewComplaintsFragment);
             }
         });
-
-        binding.newAnnouncement.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(DashboardFragment.this)
-                        .navigate(R.id.action_dashboardFragment_to_newAnnouncement);
-            }
-        }));
-
-        binding.newEvent.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(DashboardFragment.this)
-                        .navigate(R.id.action_dashboardFragment_to_newEvent);
-            }
-        }));
-
 
         // TODO prob will not need
         binding.announcement1.setOnClickListener(new View.OnClickListener() {
@@ -156,7 +157,7 @@ public class DashboardFragment extends Fragment {
         if(MainActivity.currUser.getUserType().equals("Admin")) {
             view.findViewById(R.id.dash_toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.admin_dash));
             getActivity().findViewById(R.id.toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.admin_dash));
-
+            Log.w("dashTest", "setting visibility");
             binding.newAnnouncement.setVisibility(VISIBLE);
             binding.newEvent.setVisibility(VISIBLE);
             binding.submitComplaint.setVisibility(GONE);
