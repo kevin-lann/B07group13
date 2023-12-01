@@ -68,6 +68,9 @@
         <action
             android:id="@+id/action_studentDashboardFragment_to_SubmitComplaint"
             app:destination="@id/submitComplaintFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_viewComplaintsFragment"
+            app:destination="@id/viewComplaintsFragment" />
     </fragment>
 
     <fragment
@@ -88,5 +91,9 @@
             app:destination="@id/dashboardFragment" />
 
     </fragment>
+    <fragment
+        android:id="@+id/viewComplaintsFragment"
+        android:name="com.example.studentapp.Complaints.ViewComplaintsFragment"
+        android:label="ViewComplaintsFragment" />
 
 </navigation>
