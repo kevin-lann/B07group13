@@ -1,4 +1,4 @@
-package com.example.studentapp.StudentDashboard;
+package com.example.studentapp.Dashboard;
 
 public class AnnouncementBox {
 

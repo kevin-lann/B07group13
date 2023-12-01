@@ -1,4 +1,4 @@
-package com.example.studentapp.StudentDashboard;
+package com.example.studentapp.Dashboard;
 
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,24 +16,22 @@ import android.widget.Toast;
 
 import com.example.studentapp.MainActivity;
 import com.example.studentapp.R;
-import com.example.studentapp.databinding.StudentDashboardFragmentBinding;
-import com.google.firebase.FirebaseApp;
+import com.example.studentapp.databinding.DashboardFragmentBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.database.DatabaseError;
 
-public class StudentDashboardFragment extends Fragment {
+public class DashboardFragment extends Fragment {
 
-    private StudentDashboardFragmentBinding binding;
+    private DashboardFragmentBinding binding;
 
     private DatabaseReference db;
 
     private int checkPostButtonAction;
 
-    public StudentDashboardFragment() {
+    public DashboardFragment() {
         db = FirebaseDatabase
                 .getInstance("https://b07-group13-default-rtdb.firebaseio.com")
                 .getReference()
@@ -46,7 +43,7 @@ public class StudentDashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = StudentDashboardFragmentBinding.inflate(inflater, container, false);
+        binding = DashboardFragmentBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
@@ -72,7 +69,7 @@ public class StudentDashboardFragment extends Fragment {
         binding.seeEvents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(StudentDashboardFragment.this)
+                NavHostFragment.findNavController(DashboardFragment.this)
                         .navigate(R.id.action_studentDashboardFragment_to_Events);
             }
         });
@@ -80,7 +77,7 @@ public class StudentDashboardFragment extends Fragment {
         binding.submitComplaint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(StudentDashboardFragment.this)
+                NavHostFragment.findNavController(DashboardFragment.this)
                         .navigate(R.id.action_studentDashboardFragment_to_SubmitComplaint);
             }
         });
@@ -89,7 +86,7 @@ public class StudentDashboardFragment extends Fragment {
         binding.checkPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(StudentDashboardFragment.this)
+                NavHostFragment.findNavController(DashboardFragment.this)
                         .navigate(checkPostButtonAction);
             }
         });

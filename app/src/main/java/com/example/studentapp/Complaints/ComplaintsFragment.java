@@ -12,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.studentapp.MainActivity;
 import com.example.studentapp.R;
-import com.example.studentapp.StudentDashboard.StudentDashboardFragment;
 import com.example.studentapp.databinding.ComplaintsFragmentBinding;
 
 public class ComplaintsFragment extends Fragment {
