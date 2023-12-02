@@ -18,11 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:fontFamily="sans-serif"
             android:gravity="center"
             android:layout_marginBottom="20dp"
             android:text="@string/check_post"
-            android:textSize="28sp" />
+            android:textStyle="bold"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/textView2"
@@ -30,26 +30,23 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-10dp"
             android:layout_marginBottom="10dp"
-            android:fontFamily="sans-serif"
             android:gravity="center"
             android:text="@string/check_post_desc"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:fontFamily="sans-serif"
             android:padding="10dp"
             android:text="@string/check_post_q1"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="350dp"
             android:layout_height="48dp"
-            android:fontFamily="sans-serif"
             android:entries="@array/items"/>
 
         <LinearLayout
@@ -66,9 +63,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif"
                 android:text="@string/A31"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/A31Input"
@@ -95,9 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif"
                 android:text="@string/A67"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/A67Input"
@@ -124,9 +119,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif"
                 android:text="@string/A22"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/A22Input"
@@ -153,9 +147,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif"
                 android:text="@string/A37"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/A37Input"
@@ -182,9 +175,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:fontFamily="sans-serif"
                 android:text="@string/A48"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/A48Input"
@@ -208,7 +200,6 @@
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="@string/check"
                 android:textSize="16sp" />
@@ -217,7 +208,6 @@
                 android:id="@+id/qualifyStatement"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text=""
                 android:textSize="20sp" />
