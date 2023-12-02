@@ -34,7 +34,8 @@
     <string name="cancel">Cancel</string>
 
     <!-- View Complaints page-->
-    <stirng name="see_detial">See Detail</stirng>
+    <string name="see_detail">See Detail</string>
+    <string name="back">Back</string>
 
     <!-- Check POSt page-->
     <string name="check_post">Check POSt</string>
@@ -64,4 +65,5 @@
     <string name="lorem_ipsum">
         lmao
     </string>
+
 </resources>

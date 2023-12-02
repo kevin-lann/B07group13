@@ -37,7 +37,6 @@ public class ViewComplaintAdapter extends RecyclerView.Adapter<ViewComplaintAdap
     public void onBindViewHolder(@NonNull ViewComplaintViewHolder holder, int position) {
         ExtendedComplaint complaint = complaintList.get(position);
         holder.complaintTitle.setText(complaint.getComplaintTitle());
-        holder.complainer.setText(complaint.getComplaintDetails());
     }
 
     @Override
@@ -53,7 +52,6 @@ public class ViewComplaintAdapter extends RecyclerView.Adapter<ViewComplaintAdap
         ViewComplaintViewHolder(@NonNull View itemView) {
             super(itemView);
             complaintTitle = itemView.findViewById(R.id.complaint_title);
-            complainer = itemView.findViewById(R.id.complainer);
         }
 
 
