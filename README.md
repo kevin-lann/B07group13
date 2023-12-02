@@ -65,3 +65,16 @@ Plans
 - Get all parts done by friday so can merge and test over weekend
 - Finish backends for previous few weeks and do last 3 or so user stories
 
+Dec 1
+- Bug fixing
+- Connecting last fragments
+- Testing
+- UI changes
+- Makke able to store multiple complaints from a user
+- Store complaint submission time and date
+
+Plans:
+- Connect up last few fragments
+- Test
+- Clean up UI
+
