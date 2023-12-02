@@ -1,7 +1,7 @@
 package com.example.studentapp.objects;
 
 public class Complaint {
-    String id;
+    public String id;
     public String complaintTitle;
     public String complaintDetails;
 
