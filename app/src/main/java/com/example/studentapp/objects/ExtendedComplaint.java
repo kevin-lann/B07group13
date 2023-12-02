@@ -2,8 +2,8 @@ package com.example.studentapp.objects;
 
 public class ExtendedComplaint extends Complaint{
 
-    String submissionDate;
-    String submissionTime;
+    public String submissionDate;
+    public String submissionTime;
 
     public ExtendedComplaint(){
 
