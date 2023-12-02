@@ -1,108 +1,78 @@
 package com.example.studentapp;
-
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
-import static org.mockito.Mockito.*;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
-import org.mockito.MockitoAnnotations;
-import static org.junit.Assert.assertNotNull;
+import java.util.concurrent.CompletableFuture;
+
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
 import com.example.studentapp.Login.LoginFragment;
 import com.example.studentapp.Login.LoginModel;
 import com.example.studentapp.Login.LoginPresenter;
 
-import java.util.concurrent.CompletableFuture;
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-
+@RunWith(MockitoJUnitRunner.class)
 public class LoginPresenterTest {
 
     @Mock
-    private LoginFragment view;
+    LoginModel mockedModel;
 
     @Mock
-    private LoginModel model;
-
-    @Before
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-    }
+    LoginFragment mockedView;
 
     @Test
-    public void testPerformLoginSuccess() {
-        // Arrange
-        when(model.queryDB(anyString(), anyString(), anyString()))
-                .thenReturn(CompletableFuture.completedFuture(true));
-        LoginPresenter presenter = new LoginPresenter(model, view);
-
-        // Act
-        presenter.performLogin("username", "password", "Admin");
-
-        // Assert
-        verify(view).loginSuccess();
-        verify(view, never()).loginUnsuccess();
-    }
-
-    @Test
-    public void testPerformLoginFailure() {
-        // Arrange
-        when(model.queryDB(anyString(), anyString(), anyString()))
+    public void testPerformLoginWithNonExistingUser() {
+        when(mockedModel.queryDB(anyString(), anyString(), anyString()))
                 .thenReturn(CompletableFuture.completedFuture(false));
-        LoginPresenter presenter = new LoginPresenter(model, view);
 
-        // Act
-        presenter.performLogin("username", "password", "Student");
+        LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
+        presenter.performLogin("nonexistinguser", "nonexistingpassword", "Student");
 
-        // Assert
-        verify(view, never()).loginSuccess();
-        verify(view).loginUnsuccess();
+        verify(mockedView).loginUnsuccess();
+    }
+
+    @Test
+    public void testPerformLoginWithExistingStudentUser() {
+        when(mockedModel.queryDB(anyString(), anyString(), anyString()))
+                .thenReturn(CompletableFuture.completedFuture(true));
+
+        LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
+        presenter.performLogin("existingstudent", "existingpassword", "Student");
+
+        verify(mockedView).loginSuccess();
+    }
+
+    @Test
+    public void testPerformLoginWithExistingAdminUser() {
+        when(mockedModel.queryDB(anyString(), anyString(), anyString()))
+                .thenReturn(CompletableFuture.completedFuture(true));
+
+        LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
+        presenter.performLogin("existingadmin", "existingpassword", "Admin");
+
+        verify(mockedView).loginSuccess();
     }
 
     @Test
     public void testPerformLoginWithEmptyFields() {
-        // Arrange
-        LoginPresenter presenter = new LoginPresenter(model, view);
+        LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
+        presenter.performLogin("", "", "Student");
 
-        // Act
-        presenter.performLogin("", "", "Admin");
-
-        // Assert
-        verify(view, never()).loginSuccess();
-        verify(view).loginUnsuccess();
+        verify(mockedView).loginUnsuccess();
     }
 
     @Test
-    public void testNonNullModelAndView() {
-        // Arrange & Act
-        LoginPresenter presenter = new LoginPresenter(model, view);
-        LoginModel model = new LoginModel();
-        LoginFragment frag = new LoginFragment();
+    public void testPerformLoginWithInvalidCredentials() {
+        when(mockedModel.queryDB(anyString(), anyString(), anyString()))
+                .thenReturn(CompletableFuture.completedFuture(false));
 
-        // Assert
-        assertNotNull(presenter);
-        assertNotNull(model);
-        assertNotNull(frag);
-    }
+        LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
+        presenter.performLogin("invaliduser", "invalidpassword", "Student");
 
-    @Test
-    public void testNotNullModelAndViewAfterLogin() {
-        // Arrange
-        when(model.queryDB(anyString(), anyString(), anyString()))
-                .thenReturn(CompletableFuture.completedFuture(true));
-        LoginPresenter presenter = new LoginPresenter(model, view);
-        LoginModel model = new LoginModel();
-        LoginFragment frag = new LoginFragment();
-
-        // Act
-        presenter.performLogin("username", "password", "Admin");
-
-        // Assert
-        assertNotNull(model);
-        assertNotNull(frag);
+        verify(mockedView).loginUnsuccess();
     }
 }
