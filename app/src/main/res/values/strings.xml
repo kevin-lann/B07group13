@@ -33,6 +33,9 @@
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
 
+    <!-- View Complaints page-->
+    <stirng name="see_detial">See Detail</stirng>
+
     <!-- Check POSt page-->
     <string name="check_post">Check POSt</string>
     <string name="check_post_desc">Answer a few questions to check your POSt eligibility.</string>
