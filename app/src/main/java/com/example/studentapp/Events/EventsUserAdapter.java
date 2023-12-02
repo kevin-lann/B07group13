@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.studentapp.MainActivity;
 import com.example.studentapp.NewAnnouncement.NewAnnouncementFragment;
 import com.example.studentapp.R;
+import com.example.studentapp.RateEvent.RateEventFragment;
 import com.example.studentapp.objects.Event;
 
 import java.lang.reflect.Array;
@@ -70,11 +71,9 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
             public void onClick(View view) {
                 if(MainActivity.currUser.getUserType().equals("Student")) {
                     if (event_passed) {
-                        /** TODO replace with action to rateEvent page
+                        RateEventFragment.event = event;
                          NavHostFragment.findNavController(fragment)
                          .navigate(R.id.action_eventsFragment_to_rateEvent);
-                         */
-                        fragment.sendToast("Send to rate event page.");
                     } else {
                         model.eventRSVP(event);
                     }

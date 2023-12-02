@@ -87,6 +87,9 @@
         android:name="com.example.studentapp.Events.EventsFragment"
         android:label="All Events"
         tools:layout="@layout/events_fragment">
+        <action
+            android:id="@+id/action_eventsFragment_to_rateEvent"
+            app:destination="@id/rateEventFragment" />
 
     </fragment>
 
@@ -104,7 +107,8 @@
     <fragment
         android:id="@+id/viewComplaintsFragment"
         android:name="com.example.studentapp.Complaints.ViewComplaintsFragment"
-        android:label="ViewComplaintsFragment">
+        android:label="ViewComplaintsFragment"
+        tools:layout="@layout/view_complaints_fragment">
 
     </fragment>
 
@@ -130,7 +134,16 @@
     <fragment
         android:id="@+id/checkPOStFragment"
         android:name="com.example.studentapp.CheckPOSt.CheckPOSt"
-        android:label="Check POSt">
+        android:label="Check POSt"
+        tools:layout="@layout/check_post">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/rateEventFragment"
+        android:name="com.example.studentapp.RateEvent.RateEventFragment"
+        android:label="Rate Event"
+        tools:layout="@layout/rate_event_fragment">
 
     </fragment>
 
