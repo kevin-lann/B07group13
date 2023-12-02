@@ -14,6 +14,7 @@ import com.example.studentapp.R;
 import com.example.studentapp.objects.Complaint;
 
 import com.example.studentapp.objects.Complaint;
+import com.example.studentapp.objects.ExtendedComplaint;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,14 +24,15 @@ import com.google.firebase.database.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 public class ViewComplaintsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ViewComplaintAdapter complaintAdapter;
-    private List<Complaint> complaintList;
 
     private DatabaseReference db;
+    private ValueEventListener valueEventListener;
 
     public ViewComplaintsFragment() {
         db = FirebaseDatabase
@@ -47,11 +49,12 @@ public class ViewComplaintsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.complaints_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Initialize Complaint List
-        complaintList = getComplaints();
-
+        //System.out.println(complaintList.size());
         // Initialize Adapter
-        complaintAdapter = new ViewComplaintAdapter(complaintList);
+        complaintAdapter = new ViewComplaintAdapter();
+
+        // Initialize Complaint List
+        getComplaints().thenAccept(res -> {complaintAdapter.complaintList = res;});
 
         // Set Adapter to RecyclerView
         recyclerView.setAdapter(complaintAdapter);
@@ -59,39 +62,43 @@ public class ViewComplaintsFragment extends Fragment {
         return view;
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        // Remove the ValueEventListener when the fragment is destroyed or the view is detached
+        if (valueEventListener != null) {
+            db.removeEventListener(valueEventListener);
+        }
+    }
 
-    private List<Complaint> getComplaints() {
-        final List<Complaint> complaints = new ArrayList<>();
 
-        db.addValueEventListener(new ValueEventListener() {
+    private CompletableFuture<ArrayList<ExtendedComplaint>> getComplaints() {
+        ArrayList<ExtendedComplaint> complaints = new ArrayList<>();
+
+        CompletableFuture<ArrayList<ExtendedComplaint>> res = new CompletableFuture<>();
+        valueEventListener = db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
-                complaints.clear(); // Clear the existing list to avoid duplicates
-
-                // Iterate through each user
-                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
-                    String userName = userSnapshot.getKey();
-
-                    // Iterate through complaintTitles and complaintDetails under each user
-                    for (DataSnapshot complaintSnapshot : userSnapshot.getChildren()) {
-                        String complaintTitle = complaintSnapshot.child("complaintTitle").getValue(String.class);
-                        String complaintDetails = complaintSnapshot.child("complaintDetails").getValue(String.class);
-
-                        // Create a Complaint object and add it to the list
-                        //Commenting the below, implement them!!!
-                        //Complaint complaint = new Complaint(complaintTitle, complaintDetails);
-                        //complaints.add(complaint);
-                    }
+                if(complaints != null){
+                    complaints.clear(); // Clear the existing list to avoid duplicates
                 }
 
-                // Set the new data to the adapter
-                complaintList.clear();
-                complaintList.addAll(complaints);
+                for (DataSnapshot complaintId : dataSnapshot.getChildren()){
+                    ExtendedComplaint complaint = new ExtendedComplaint();
+                    complaint.id = complaintId.child("Username").getValue(String.class);
+                    complaint.complaintTitle = complaintId.child("Title").getValue(String.class);
+                    complaint.complaintDetails = complaintId.child("Description").getValue(String.class);
+                    complaint.submissionDate = complaintId.child("SubmissionDate").getValue(String.class);
+                    complaint.submissionTime = complaintId.child("SubmissionTime").getValue(String.class);
+
+                    complaints.add(complaint);
+                }
+
+                res.complete(complaints);
 
                 // Notify the adapter that data has changed
-                if(complaintAdapter != null){
-                    complaintAdapter.notifyDataSetChanged();
-                }
+                complaintAdapter.notifyDataSetChanged();
+
             }
 
             @Override
@@ -100,6 +107,6 @@ public class ViewComplaintsFragment extends Fragment {
             }
         });
 
-        return complaints;
+        return res;
     }
 }

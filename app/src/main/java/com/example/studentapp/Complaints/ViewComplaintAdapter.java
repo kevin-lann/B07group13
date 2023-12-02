@@ -10,14 +10,19 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studentapp.R;
 import com.example.studentapp.objects.Complaint;
+import com.example.studentapp.objects.ExtendedComplaint;
 
 import java.util.List;
 
 public class ViewComplaintAdapter extends RecyclerView.Adapter<ViewComplaintAdapter.ViewComplaintViewHolder> {
 
-    private List<Complaint> complaintList;
+    public List<ExtendedComplaint> complaintList;
 
-    public ViewComplaintAdapter(List<Complaint> complaintList) {
+    public ViewComplaintAdapter(){
+
+    }
+
+    public ViewComplaintAdapter(List<ExtendedComplaint> complaintList) {
         this.complaintList = complaintList;
     }
 
@@ -30,14 +35,14 @@ public class ViewComplaintAdapter extends RecyclerView.Adapter<ViewComplaintAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewComplaintViewHolder holder, int position) {
-        Complaint complaint = complaintList.get(position);
+        ExtendedComplaint complaint = complaintList.get(position);
         holder.complaintTitle.setText(complaint.getComplaintTitle());
         holder.complainer.setText(complaint.getComplaintDetails());
     }
 
     @Override
     public int getItemCount() {
-        return complaintList.size();
+        return complaintList != null ? complaintList.size() : 0;
     }
 
 
