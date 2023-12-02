@@ -83,7 +83,7 @@ public class SignupFragment extends Fragment {
 
     public void loginSuccess() {
         NavHostFragment.findNavController(SignupFragment.this)
-                .navigate(R.id.action_SecondFragment_to_ThirdFragment);
+                .navigate(R.id.action_SecondFragment_to_dashboard);
     }
 
     public void loginUnsuccess(String msg) {

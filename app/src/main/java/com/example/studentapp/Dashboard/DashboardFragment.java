@@ -100,12 +100,11 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        // TODO action depending on checkPostButtonAction
         binding.checkPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(DashboardFragment.this)
-                        .navigate(R.id.action_dashboardFragment_to_viewComplaintsFragment);
+                        .navigate(checkPostButtonAction);
             }
         });
 
@@ -150,8 +149,8 @@ public class DashboardFragment extends Fragment {
 
             binding.checkPost.setText("Check POSt");
 
-            // TODO uncomment when checkPost ready
-            //checkPostButtonAction = R.id.action_studentDashboardFragment_to_checkPost;
+
+            checkPostButtonAction = R.id.action_dashboardFragment_to_checkPOStFragment;
         }
 
         if(MainActivity.currUser.getUserType().equals("Admin")) {

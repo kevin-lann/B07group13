@@ -33,6 +33,31 @@
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
 
+    <!-- Check POSt page-->
+    <string name="check_post">Check POSt</string>
+    <string name="check_post_desc">Answer a few questions to check your POSt eligibility.</string>
+    <string name="check_post_q1">Choose a subject POSt</string>
+    <string name="A31">Enter MATA31 GPA:</string>
+    <string name="A67">Enter MATA67 GPA:</string>
+    <string name="A22">Enter MATA22 GPA:</string>
+    <string name="A37">Enter MATA37 GPA:</string>
+    <string name="A48">Enter CSCA48 GPA:</string>
+    <string name="A08">Enter CSCA08 GPA:</string>
+    <string name="invalid">Invalid Input</string>
+    <string name="notQualify">You do not Qualify.</string>
+    <string name="qualify">You Qualify!</string>
+    <string name="check">Check</string>
+    <string name="GPAHint">e.g 3.0</string>
+
+    <string-array name="items">
+        <item >Computer Science</item>
+        <item >Mathematics Major</item>
+        <item >Mathematics Specialist</item>
+        <item >Statistics Major</item>
+        <item >Statistics Specialist</item>
+    </string-array>
+
+
     <string name="lorem_ipsum">
         lmao
     </string>
