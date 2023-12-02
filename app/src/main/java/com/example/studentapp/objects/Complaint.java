@@ -1,15 +1,14 @@
 package com.example.studentapp.objects;
 
 public class Complaint {
-
+    private String id;
     public String complaintTitle;
     public String complaintDetails;
 
-    public Complaint(){
+    public Complaint() {}
 
-    }
-
-    public Complaint(String complaintTitle, String complaintDetails) {
+    public Complaint(String id, String complaintTitle, String complaintDetails) {
+        this.id = id;
         this.complaintTitle = complaintTitle;
         this.complaintDetails = complaintDetails;
     }

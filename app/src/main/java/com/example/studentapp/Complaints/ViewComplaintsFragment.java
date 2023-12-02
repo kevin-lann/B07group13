@@ -78,8 +78,9 @@ public class ViewComplaintsFragment extends Fragment {
                         String complaintDetails = complaintSnapshot.child("complaintDetails").getValue(String.class);
 
                         // Create a Complaint object and add it to the list
-                        Complaint complaint = new Complaint(complaintTitle, complaintDetails);
-                        complaints.add(complaint);
+                        //Commenting the below, implement them!!!
+                        //Complaint complaint = new Complaint(complaintTitle, complaintDetails);
+                        //complaints.add(complaint);
                     }
                 }
 
