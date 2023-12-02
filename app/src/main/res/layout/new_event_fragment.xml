@@ -25,7 +25,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/eventNameLayout"
             android:layout_width="wrap_content"
-            android:layout_height="36dp"
+            android:layout_height="60dp"
             android:layout_marginTop="24dp"
             app:layout_constraintTop_toBottomOf="@id/textview_first"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +68,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventLocation"
                 android:layout_width="281dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"
                 android:hint="Location"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +96,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventMonth"
                 android:layout_width="60dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"
                 android:hint="M"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -112,7 +112,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventDay"
                 android:layout_width="60dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"
                 android:hint="D"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -128,7 +128,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventYear"
                 android:layout_width="110dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"
                 android:hint="D"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -156,7 +156,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventStartHour"
                 android:layout_width="60dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -171,7 +171,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventStartMinute"
                 android:layout_width="60dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -180,11 +180,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="Event Start Time: \n(Enter HH/MM using 24h clock)"
+            android:text="Event End Time: \n(Enter HH/MM using 24h clock)"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/eventDayLayout" />
+            app:layout_constraintTop_toBottomOf="@id/eventStartMinuteLayout" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/eventEndHourLayout"
@@ -198,7 +198,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventEndHour"
                 android:layout_width="60dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -213,9 +213,47 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/eventEndMinute"
                 android:layout_width="60dp"
-                android:layout_height="36dp"
+                android:layout_height="60dp"
                 android:textSize="12sp"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/eventMaxAttendeesLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/eventEndHourLayout"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/eventMaxAttendees"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:textSize="12sp"
+                android:hint="Max attendees"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/eventCreate"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eventMaxAttendeesLayout"
+            />
+
+        <Button
+            android:id="@+id/eventCancelCreate"
+            android:layout_marginTop="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            app:layout_constraintStart_toEndOf="@id/eventCreate"
+            app:layout_constraintTop_toBottomOf="@id/eventMaxAttendeesLayout"
+            />
 
 
 

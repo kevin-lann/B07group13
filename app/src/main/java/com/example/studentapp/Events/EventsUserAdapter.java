@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.studentapp.MainActivity;
 import com.example.studentapp.NewAnnouncement.NewAnnouncementFragment;
 import com.example.studentapp.R;
 import com.example.studentapp.objects.Event;
@@ -55,21 +56,34 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
         holder.organizer.setText("Event organized by " + event.organizer);
 
         boolean event_passed = event.hasPassed();
-        // Check whether event has passed or not to determine if RSVP or RATE
-        holder.RSVP_Or_Rate.setText( event_passed ? "Rate" : "RSVP");
+
+        if(MainActivity.currUser.getUserType().equals("Student")) {
+            // Check whether event has passed or not to determine if RSVP or RATE
+            holder.RSVP_Or_Rate.setText(event_passed ? "Rate" : "RSVP");
+        }
+        else {
+            holder.RSVP_Or_Rate.setText("Results");
+        }
 
         holder.RSVP_Or_Rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(event_passed) {
-                    /** TODO replace with action to rateEvent page
-                    NavHostFragment.findNavController(fragment)
-                            .navigate(R.id.action_eventsFragment_to_rateEvent);
-                     */
-                    fragment.sendToast("Send to rate event page.");
+                if(MainActivity.currUser.getUserType().equals("Student")) {
+                    if (event_passed) {
+                        /** TODO replace with action to rateEvent page
+                         NavHostFragment.findNavController(fragment)
+                         .navigate(R.id.action_eventsFragment_to_rateEvent);
+                         */
+                        fragment.sendToast("Send to rate event page.");
+                    } else {
+                        model.eventRSVP(event);
+                    }
                 }
                 else {
-                    model.eventRSVP(event);
+                    /** TODO replace with action to viewEventFeedback page
+                     NavHostFragment.findNavController(fragment)
+                     .navigate(R.id.action_eventsFragment_to_viewEventFeedback);
+                     */
                 }
             }
         });

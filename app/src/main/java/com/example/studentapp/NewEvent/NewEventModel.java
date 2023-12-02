@@ -14,7 +14,7 @@ public class NewEventModel {
 
     public void postEvent(Event event) {
         String id = new Integer(event.eventId).toString();
-        DatabaseReference ref = db.getReference().child("Announcements");
+        DatabaseReference ref = db.getReference().child("Events");
         ref.child(id).setValue(event.createMap());
     }
 }

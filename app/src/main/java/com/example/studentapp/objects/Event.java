@@ -43,7 +43,17 @@ public class Event {
     }
 
     public String getFormattedTime() {
-        return startTime[0] + ":" + startTime[1] + " - " + endTime[0] + ":" + endTime[1];
+        String startMin, endMin;
+
+        if(startTime[1] == 0) startMin = "00";
+        else if(startTime[1] < 10) startMin = "0" + startTime[1];
+        else startMin = "" + startTime[1];
+
+        if(endTime[1] == 0) endMin = "00";
+        else if(endTime[1] < 10) endMin = "0" + endTime[1];
+        else endMin = "" + endTime[1];
+
+        return startTime[0] + ":" + startMin + " - " + endTime[0] + ":" + endMin;
     }
 
     public String getFormattedDate() {
@@ -113,6 +123,7 @@ public class Event {
         info.put("event_description", eventDescription);
         info.put("time_start", startTime[0] + ":" + startTime[1] );
         info.put("time_end", endTime[0] + ":" + endTime[1] );
+        info.put("date", date[0] + "-" + date[1] + "-" + date[2]);
         return info;
     }
 

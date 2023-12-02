@@ -116,7 +116,7 @@ public class EventsModel {
                 String end = String.valueOf(snapshot.child("time_end").getValue());
                 int[] time_end = {
                         Integer.parseInt(end.substring(0, end.indexOf(':'))),
-                        Integer.parseInt(end.substring(end.indexOf(':') + 1, 5))
+                        Integer.parseInt(end.substring(end.indexOf(':') + 1, end.length()))
                 };
 
                 String srt = String.valueOf(snapshot.child("time_start").getValue());

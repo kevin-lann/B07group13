@@ -151,7 +151,7 @@ public class DashboardFragment extends Fragment {
             binding.checkPost.setText("Check POSt");
 
             // TODO uncomment when checkPost ready
-            // checkPostButtonAction = R.id.action_studentDashboardFragment_to_checkPost;
+            //checkPostButtonAction = R.id.action_studentDashboardFragment_to_checkPost;
         }
 
         if(MainActivity.currUser.getUserType().equals("Admin")) {

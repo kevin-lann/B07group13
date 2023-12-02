@@ -60,7 +60,7 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name = "com.example.studentapp.Dashboard.DashboardFragment"
-        android:label="Dashboard'"
+        android:label="Dashboard"
         tools:layout="@layout/dashboard_fragment">
         <action
             android:id="@+id/action_studentDashboardFragment_to_Events"
@@ -118,6 +118,9 @@
         android:name="com.example.studentapp.NewEvent.NewEventFragment"
         android:label="New Event"
         tools:layout="@layout/new_event_fragment">
+        <action
+            android:id="@+id/action_newEventFragment_to_Dashboard"
+            app:destination="@id/dashboardFragment"/>
 
     </fragment>
 
