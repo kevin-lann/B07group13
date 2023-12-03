@@ -26,7 +26,8 @@
             app:layout_constraintEnd_toStartOf="@+id/see_detail"
             app:layout_constraintHorizontal_bias="0.17"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:scrollbars="horizontal"/>
 
         <Button
             android:id="@+id/see_detail"

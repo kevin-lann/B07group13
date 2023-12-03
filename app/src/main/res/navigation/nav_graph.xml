@@ -113,6 +113,12 @@
         android:label="ViewComplaintsFragment"
         tools:layout="@layout/view_complaints_fragment">
 
+        <action
+            android:id="@+id/action_viewComplaintsFragment_to_viewFullComplaintFragment"
+            app:destination="@id/viewFullComplaintFragment" />
+        <action
+            android:id="@+id/action_viewComplaintsFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
     </fragment>
 
     <fragment
@@ -165,6 +171,15 @@
         android:label="Announcement Details"
         tools:layout="@layout/announcement_detail_fragment">
 
+    </fragment>
+    <fragment
+        android:id="@+id/viewFullComplaintFragment"
+        android:name="com.example.studentapp.Complaints.ViewFullComplaintFragment"
+        android:label="view_full_complaint"
+        tools:layout="@layout/view_full_complaints_fragment" >
+        <action
+            android:id="@+id/action_viewFullComplaintFragment_to_viewComplaintsFragment"
+            app:destination="@id/viewComplaintsFragment" />
     </fragment>
 
 </navigation>

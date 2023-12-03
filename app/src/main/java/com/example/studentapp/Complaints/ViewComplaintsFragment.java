@@ -5,12 +5,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.studentapp.R;
+import com.example.studentapp.databinding.ViewComplaintsFragmentBinding;
 import com.example.studentapp.objects.Complaint;
 
 import com.example.studentapp.objects.Complaint;
@@ -30,6 +34,7 @@ public class ViewComplaintsFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private ViewComplaintAdapter complaintAdapter;
+    private ViewComplaintsFragmentBinding binding;
 
     private DatabaseReference db;
     private ValueEventListener valueEventListener;
@@ -42,8 +47,14 @@ public class ViewComplaintsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.view_complaints_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        binding = ViewComplaintsFragmentBinding.inflate(inflater, container, false);
+        return binding.getRoot();
+    }
+
+    public void onViewCreated(@NotNull View view, Bundle savedInstanceState){
+        super.onViewCreated(view, savedInstanceState);
 
         // Initialize RecyclerView
         recyclerView = view.findViewById(R.id.complaints_list);
@@ -51,7 +62,8 @@ public class ViewComplaintsFragment extends Fragment {
 
         //System.out.println(complaintList.size());
         // Initialize Adapter
-        complaintAdapter = new ViewComplaintAdapter();
+        complaintAdapter = new ViewComplaintAdapter(NavHostFragment.
+                findNavController(ViewComplaintsFragment.this));
 
         // Initialize Complaint List
         getComplaints().thenAccept(res -> {complaintAdapter.complaintList = res;});
@@ -59,8 +71,15 @@ public class ViewComplaintsFragment extends Fragment {
         // Set Adapter to RecyclerView
         recyclerView.setAdapter(complaintAdapter);
 
-        return view;
+        binding.backToDashboard.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                NavHostFragment.findNavController(ViewComplaintsFragment.this)
+                        .navigate(R.id.action_viewComplaintsFragment_to_dashboardFragment);
+            }
+        });
     }
+
 
     @Override
     public void onDestroyView() {
@@ -90,8 +109,13 @@ public class ViewComplaintsFragment extends Fragment {
                     complaint.complaintDetails = complaintId.child("Description").getValue(String.class);
                     complaint.submissionDate = complaintId.child("SubmissionDate").getValue(String.class);
                     complaint.submissionTime = complaintId.child("SubmissionTime").getValue(String.class);
+                    complaint.idInDatabase = complaintId.getKey();
 
                     complaints.add(complaint);
+                }
+
+                if(complaints != null){
+                    complaints.remove(complaints.size() - 1);
                 }
 
                 res.complete(complaints);
