@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Announcement {
     public int announcementId;
-    public AdminUser announcer;
+    public String announcer;
     public String announcementName;
     public String announcementDescription;
 
@@ -14,12 +14,8 @@ public class Announcement {
     // int[3] {month, day, year}
     public int date[];
 
-    public Announcement(int announcementId, AdminUser announcer) {
-        this.announcementId = announcementId;
-        this.announcer = announcer;
-    }
 
-    public Announcement(int announcementId, AdminUser announcer, String announcementName,
+    public Announcement(int announcementId, String announcer, String announcementName,
                         String announcementDescription, int[] time, int[] date) {
         this.announcementId = announcementId;
         this.announcer = announcer;
@@ -39,7 +35,7 @@ public class Announcement {
 
     public Map<String,String> createMap(){
         Map<String, String> info = new HashMap<>();
-        info.put("announcer", announcer.getUsername());
+        info.put("announcer", announcer);
         info.put("announcementName", announcementName);
         info.put("announcementDescription", announcementDescription);
         info.put("time", getFormattedTime());

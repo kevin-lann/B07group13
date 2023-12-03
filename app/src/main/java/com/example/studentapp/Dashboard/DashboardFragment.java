@@ -63,7 +63,8 @@ public class DashboardFragment extends Fragment {
         binding.seeAnnouncements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Test2", Toast.LENGTH_SHORT).show();
+                NavHostFragment.findNavController(DashboardFragment.this)
+                        .navigate(R.id.action_dashboardFragment_to_Announcements);
             }
         });
 
@@ -74,11 +75,10 @@ public class DashboardFragment extends Fragment {
                         .navigate(R.id.action_studentDashboardFragment_to_Events);
             }
         });
-        Log.w("dashTest", "outside");
+
         binding.newAnnouncement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.w("dashTest", "inside");
                 NavHostFragment.findNavController(DashboardFragment.this)
                         .navigate(R.id.action_dashboardFragment_to_newAnnouncement);
             }
@@ -163,8 +163,7 @@ public class DashboardFragment extends Fragment {
 
             binding.checkPost.setText("View Complaints");
 
-            // TODO uncomment when view complaints ready
-            //checkPostButtonAction = R.id.action_studentDashBoardFragment_to_viewComplaints;
+            checkPostButtonAction = R.id.action_dashboardFragment_to_viewComplaintsFragment;
         }
     }
 

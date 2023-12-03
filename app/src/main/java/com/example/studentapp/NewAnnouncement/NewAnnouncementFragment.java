@@ -97,7 +97,7 @@ public class NewAnnouncementFragment extends Fragment {
 
         Log.w("announcementTest", "" + post_date[0] + post_date[1] + post_date[2] );
 
-        Announcement a = new Announcement(id, announcer, announcementName, announcementDescription,
+        Announcement a = new Announcement(id, announcer.getUsername(), announcementName, announcementDescription,
                 post_time, post_date);
 
         return a;

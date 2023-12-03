@@ -66,6 +66,9 @@
             android:id="@+id/action_studentDashboardFragment_to_Events"
             app:destination="@id/eventsFragment" />
         <action
+            android:id="@+id/action_dashboardFragment_to_Announcements"
+            app:destination="@id/AnnouncementsFragment" />
+        <action
             android:id="@+id/action_studentDashboardFragment_to_SubmitComplaint"
             app:destination="@id/submitComplaintFragment" />
         <action
@@ -144,6 +147,23 @@
         android:name="com.example.studentapp.RateEvent.RateEventFragment"
         android:label="Rate Event"
         tools:layout="@layout/rate_event_fragment">
+    </fragment>
+
+    <fragment
+        android:id="@+id/AnnouncementsFragment"
+        android:name="com.example.studentapp.Announcements.AnnouncementsFragment"
+        android:label="Announcements"
+        tools:layout="@layout/announcements_fragment">
+        <action
+            android:id="@+id/action_announcements_to_details"
+            app:destination="@id/AnnouncementDetailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/AnnouncementDetailFragment"
+        android:name="com.example.studentapp.Announcements.AnnouncementDetailFragment"
+        android:label="Announcement Details"
+        tools:layout="@layout/announcement_detail_fragment">
 
     </fragment>
 
