@@ -3,6 +3,8 @@ package com.example.studentapp.Complaints;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -10,6 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.widget.Toast;
 
 import com.bumptech.glide.disklrucache.DiskLruCache;
 import com.example.studentapp.R;
@@ -41,11 +47,16 @@ public class ViewFullComplaintFragment extends Fragment {
 
         binding = ViewFullComplaintsFragmentBinding.inflate(inflater, container, false);
 
+        ActionBar actionBar = ((AppCompatActivity)requireActivity()).getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setTitle("Complaint Detail");
+        }
+
         complaintId = getArguments().getString("key");
-        return binding .getRoot();
+        return binding.getRoot();
     }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
+    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         valueEventListener = db.addValueEventListener(new ValueEventListener() {
@@ -64,25 +75,38 @@ public class ViewFullComplaintFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                    Log.e("ViewFullComplaintsFragment", "Error setting text", error.toException());
+                Log.e("ViewFullComplaintsFragment", "Error setting text", error.toException());
             }
         });
-        binding.back.setOnClickListener(new View.OnClickListener(){
+        binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 NavHostFragment.findNavController(ViewFullComplaintFragment.this)
                         .navigate(R.id.action_viewFullComplaintFragment_to_viewComplaintsFragment);
             }
         });
 
-        binding.delete.setOnClickListener(new View.OnClickListener(){
+        binding.delete.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
-                NavHostFragment.findNavController(ViewFullComplaintFragment.this)
-                        .navigate(R.id.action_viewFullComplaintFragment_to_viewComplaintsFragment);
-                db.child(complaintId).removeValue();
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+                builder.setTitle("Confirm Deletion")
+                        .setMessage("Are you sure you want to delete this complaint?")
+                        .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                NavHostFragment.findNavController(ViewFullComplaintFragment.this)
+                                        .navigate(R.id.action_viewFullComplaintFragment_to_viewComplaintsFragment);
+                                db.child(complaintId).removeValue();
+                                Toast.makeText(getActivity(), "Complaint successfully deleted", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.create().show();
             }
         });
-
     }
 }
