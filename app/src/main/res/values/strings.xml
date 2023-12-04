@@ -28,6 +28,9 @@
     <string name="title2">Upcoming Events</string>
     <string name="checkPost">Check POSt</string>
     <string name="complaint">Submit Complaint</string>
+    <string name="announcementDefaultTitle">No Current Announcement</string>
+    <string name="eventDefaultTitle">No Current Event</string>
+    <string name="noText"></string>
 
     <!-- Complaints page-->
     <string name="submit">Submit</string>

@@ -2,34 +2,48 @@ package com.example.studentapp.Dashboard;
 
 public class AnnouncementBox {
 
-    String topic;
-    String sender;
+    String announcementDescription;
+    String announcementName;
+    String announcer;
     String date;
+    String time;
 
-    public AnnouncementBox(){
+    public AnnouncementBox() {
 
-    };
+    }
 
-    public AnnouncementBox(String topic, String sender, String date){
-        this.topic = topic;
-        this.sender = sender;
+
+    public AnnouncementBox(String announcementDescription, String announcementName,
+                           String announcer, String date, String time) {
+        this.announcementDescription = announcementDescription;
+        this.announcementName = announcementName;
+        this.announcer = announcer;
         this.date = date;
+        this.time = time;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getAnnouncementDescription() {
+        return announcementDescription;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setAnnouncementDescription(String announcementDescription) {
+        this.announcementDescription = announcementDescription;
     }
 
-    public String getSender() {
-        return sender;
+    public String getAnnouncementName() {
+        return announcementName;
     }
 
-    public void setSender(String sender) {
-        this.sender = sender;
+    public void setAnnouncementName(String announcementName) {
+        this.announcementName = announcementName;
+    }
+
+    public String getAnnouncer() {
+        return announcer;
+    }
+
+    public void setAnnouncer(String announcer) {
+        this.announcer = announcer;
     }
 
     public String getDate() {
@@ -38,5 +52,13 @@ public class AnnouncementBox {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

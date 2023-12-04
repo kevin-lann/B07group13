@@ -3,6 +3,8 @@ package com.example.studentapp.Dashboard;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
@@ -24,19 +26,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.concurrent.CompletableFuture;
+
 public class DashboardFragment extends Fragment {
 
     private DashboardFragmentBinding binding;
 
     private DatabaseReference db;
-
     private int checkPostButtonAction;
+    private long currentComplaintId;
+    private long currentEventId;
 
     public DashboardFragment() {
         db = FirebaseDatabase
                 .getInstance("https://b07-group13-default-rtdb.firebaseio.com")
-                .getReference()
-                .child("Announcements");
+                .getReference();
     }
 
 
@@ -51,6 +55,9 @@ public class DashboardFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         Log.w("dashTest", "first");
         setupDashboard(view);
+
+        getAnnouncementId().thenAccept(res1 -> {currentComplaintId = res1;});
+        getEventId().thenAccept(res2 -> {currentEventId = res2;});
 
         /**
         //set the toolbar
@@ -116,24 +123,109 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        db.addValueEventListener(new ValueEventListener() {
+        db.child("Announcements").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                AnnouncementBox announcement1 = snapshot.child("announcement1").getValue(AnnouncementBox.class);
-
-                if (announcement1 != null) {
-                    binding.announceTopic1.setText(announcement1.getTopic());
-                    binding.sender1.setText(announcement1.getSender());
-                    binding.date1.setText(announcement1.getDate());
+                for (int i = 1; i < 4; i++) {
+                    AnnouncementBox announcementBox = snapshot
+                            .child(String.valueOf((int)currentComplaintId - i))
+                            .getValue(AnnouncementBox.class);
+                    if (announcementBox != null) {
+                        if (i == 1) {
+                            binding.announceTopic1.setText(announcementBox.getAnnouncementName());
+                            binding.sender1.setText(announcementBox.getAnnouncer());
+                            binding.date1.setText(announcementBox.getDate());
+                        } else if (i == 2) {
+                            binding.announceTopic2.setText(announcementBox.getAnnouncementName());
+                            binding.sender2.setText(announcementBox.getAnnouncer());
+                            binding.date2.setText(announcementBox.getDate());
+                        } else {
+                            binding.announceTopic3.setText(announcementBox.getAnnouncementName());
+                            binding.sender3.setText(announcementBox.getAnnouncer());
+                            binding.date3.setText(announcementBox.getDate());
+                        }
+                    }
                 }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Error reading data: " + error.getMessage());
+            }
+        });
+
+        /*db.child("Events").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (int j = 1; j < 4; j++) {
+                    EventBox eventBox = snapshot
+                            .child(String.valueOf((int)currentEventId - j))
+                            .getValue(EventBox.class);
+                    if (eventBox != null) {
+                        if (j == 1) {
+                            binding.eventTopic1.setText(eventBox.getEventLocation());
+                            System.out.println(eventBox.getEventName());
+                            binding.sender4.setText(eventBox.getOrganizer());
+                            binding.date4.setText(eventBox.getDate());
+                        } else if (j == 2) {
+                            binding.eventTopic2.setText("Test2");
+                            System.out.println("Hello");
+                            binding.sender5.setText(eventBox.getOrganizer());
+                            binding.date5.setText(eventBox.getDate());
+                        } else {
+                            binding.eventTopic3.setText(eventBox.getEventName());
+                            binding.sender6.setText(eventBox.getOrganizer());
+                            binding.date6.setText(eventBox.getDate());
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Firebase", "Error reading data: " + error.getMessage());
+            }
+        });
+
+*/
+    }
+
+    public CompletableFuture<Long> getAnnouncementId() {
+        CompletableFuture<Long> res1 = new CompletableFuture<>();
+        final long[] currentAnnouncementId = new long[1];
+        db.child("AnnouncementID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                currentAnnouncementId[0] = snapshot.getValue(Long.class);
+
+                res1.complete(currentAnnouncementId[0]);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getActivity(), "Failed to read value: " + error.toException(), Toast.LENGTH_SHORT).show();
-
+                res1.complete(null);
             }
         });
+
+        return res1;
+    }
+
+    public CompletableFuture<Long> getEventId() {
+        CompletableFuture<Long> res2 = new CompletableFuture<>();
+        final long[] currentEventId = new long[1];
+        db.child("EventID").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                currentEventId[0] = snapshot.getValue(Long.class);
+
+                res2.complete(currentEventId[0]);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                res2.complete(null);
+            }
+        });
+
+        return res2;
     }
 
     /**
