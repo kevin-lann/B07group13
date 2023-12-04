@@ -115,14 +115,14 @@ public class Event {
 
     public Map<String, String> createMap() {
         Map<String, String> info = new HashMap<>();
-        info.put("event_name", eventName);
+        info.put("eventName", eventName);
         info.put("organizer", organizer);
-        info.put("num_attendees", "" + numAttendees);
-        info.put("max_attendees", "" + maxAttendees);
-        info.put("event_location", eventLocation);
-        info.put("event_description", eventDescription);
-        info.put("time_start", startTime[0] + ":" + startTime[1] );
-        info.put("time_end", endTime[0] + ":" + endTime[1] );
+        info.put("numAttendees", "" + numAttendees);
+        info.put("maxAttendees", "" + maxAttendees);
+        info.put("eventLocation", eventLocation);
+        info.put("eventDescription", eventDescription);
+        info.put("timeStart", startTime[0] + ":" + startTime[1] );
+        info.put("timeEnd", endTime[0] + ":" + endTime[1] );
         info.put("date", date[0] + "-" + date[1] + "-" + date[2]);
         return info;
     }

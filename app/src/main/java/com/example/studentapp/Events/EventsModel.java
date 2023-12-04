@@ -32,6 +32,10 @@ public class EventsModel {
         this.fragment = fragment;
     }
 
+    public EventsModel() {
+        db = FirebaseDatabase.getInstance("https://b07-group13-default-rtdb.firebaseio.com");
+    }
+
     /**
      * return arraylist of all of a given user's events
      * If user is AdminUser, then this returns their Created Events
@@ -105,21 +109,21 @@ public class EventsModel {
                 Log.w("eventTest", "inside");
                 Event event;
                 String date = String.valueOf(snapshot.child("date").getValue());
-                String event_description = String.valueOf(snapshot.child("event_description").getValue());
-                String event_location = String.valueOf(snapshot.child("event_location").getValue());
-                String event_name = String.valueOf(snapshot.child("event_name").getValue());
-                String max_attendees = String.valueOf(snapshot.child("max_attendees").getValue());
-                String num_attendees = String.valueOf(snapshot.child("num_attendees").getValue());
+                String event_description = String.valueOf(snapshot.child("eventDescription").getValue());
+                String event_location = String.valueOf(snapshot.child("eventLocation").getValue());
+                String event_name = String.valueOf(snapshot.child("eventName").getValue());
+                String max_attendees = String.valueOf(snapshot.child("maxAttendees").getValue());
+                String num_attendees = String.valueOf(snapshot.child("numAttendees").getValue());
                 String organizer = String.valueOf(snapshot.child("organizer").getValue());
 
                 // parse start and end times (string --> int[2] = {hour, min} )
-                String end = String.valueOf(snapshot.child("time_end").getValue());
+                String end = String.valueOf(snapshot.child("timeEnd").getValue());
                 int[] time_end = {
                         Integer.parseInt(end.substring(0, end.indexOf(':'))),
                         Integer.parseInt(end.substring(end.indexOf(':') + 1, end.length()))
                 };
 
-                String srt = String.valueOf(snapshot.child("time_start").getValue());
+                String srt = String.valueOf(snapshot.child("timeStart").getValue());
                 int[] time_start = {
                         Integer.parseInt(srt.substring(0, srt.indexOf(':'))),
                         Integer.parseInt(srt.substring(srt.indexOf(':') + 1, srt.length()))
@@ -168,7 +172,7 @@ public class EventsModel {
 
                 // Increment event num_attendees
                 DatabaseReference ref1 = db.getReference().child("Events").child(id);
-                ref1.child("num_attendees").setValue(tmp_num_attendees+1);
+                ref1.child("numAttendees").setValue(tmp_num_attendees+1);
 
                 // add event to user's RSVP list
                 DatabaseReference ref2 = db.getReference().child("UserInfo")
@@ -223,8 +227,8 @@ public class EventsModel {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                tmp_max_attendees = (Long)(snapshot.child("max_attendees").getValue());
-                tmp_num_attendees = (Long)(snapshot.child("num_attendees").getValue());
+                tmp_max_attendees = (Long)(snapshot.child("maxAttendees").getValue());
+                tmp_num_attendees = (Long)(snapshot.child("numAttendees").getValue());
                 if (tmp_num_attendees.equals(tmp_max_attendees)) {
                     res.complete(true);
                 }

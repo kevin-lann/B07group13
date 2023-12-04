@@ -54,19 +54,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextHeadline" />
 
-    <!-- Announcement Text -->
     <Spinner
         android:id="@+id/spinnerIsEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:background="@android:drawable/btn_dropdown"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_is_event" />
 
+    <!-- Announcement Text -->
     <TextView
         android:id="@+id/text_announcement_text"
         android:layout_width="wrap_content"

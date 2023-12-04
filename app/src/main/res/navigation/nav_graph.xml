@@ -129,6 +129,9 @@
         android:name="com.example.studentapp.NewAnnouncement.NewAnnouncementFragment"
         android:label="New Announcement"
         tools:layout="@layout/new_announcement_fragment">
+        <action
+            android:id="@+id/action_newAnnouncementFragment_to_Dashboard"
+            app:destination="@id/dashboardFragment"/>
 
     </fragment>
 

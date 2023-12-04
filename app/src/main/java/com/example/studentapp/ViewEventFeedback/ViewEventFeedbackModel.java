@@ -35,7 +35,7 @@ public class ViewEventFeedbackModel {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                res.complete(String.valueOf(snapshot.child("event_name").getValue()));
+                res.complete(String.valueOf(snapshot.child("eventName").getValue()));
             }
 
             @Override

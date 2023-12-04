@@ -1,8 +1,13 @@
 package com.example.studentapp.NewAnnouncement;
 
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 
+import com.example.studentapp.Events.EventsModel;
+import com.example.studentapp.MainActivity;
 import com.example.studentapp.objects.Announcement;
+import com.example.studentapp.objects.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -10,6 +15,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class NewAnnouncementModel {
@@ -23,6 +29,10 @@ public class NewAnnouncementModel {
         String id = new Integer(announcement.announcementId).toString();
         DatabaseReference ref = db.getReference().child("Announcements");
         ref.child(id).setValue(announcement.createMap());
+
+        ref = db.getReference().child("UserInfo").child("Admin")
+                .child(announcement.announcer).child("Created_Announcements");
+        ref.setValue(id);
     }
 
     public void updateAnnouncementId(long id) {
@@ -45,5 +55,18 @@ public class NewAnnouncementModel {
             }
         });
         return res;
+    }
+
+    public List<String> getCreatedEventNames() {
+        List<String> eventList = new ArrayList<>();
+        EventsModel eModel = new EventsModel();
+        eModel.getUserEvents(MainActivity.currUser).thenAccept( res -> {
+                for(String id : res) {
+                    eModel.getEventFromId(id).thenAccept( event -> {
+                            eventList.add(event.eventName);
+                    });
+                }
+        });
+        return eventList;
     }
 }

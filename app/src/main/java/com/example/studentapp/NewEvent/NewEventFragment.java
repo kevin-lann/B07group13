@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -43,6 +44,7 @@ public class NewEventFragment extends Fragment{
                     Event e = setupNewEvent(res);
                     model.postEvent(e);
                     model.updateEventId(res + 1);
+                    Toast.makeText(getContext(), "Created!", Toast.LENGTH_SHORT);
                 });
             }
         });
@@ -77,8 +79,16 @@ public class NewEventFragment extends Fragment{
         };
         int maxAttendees=Integer.parseInt(binding.eventMaxAttendees.getText().toString());
 
-        Event e = new Event((int) id, organizer, 0, maxAttendees, eventName, eventDescription, eventLocation,
-                eventStart, eventEnd, eventDate);
+        Event e = new Event((int) id,
+                organizer,
+                0,
+                maxAttendees,
+                eventName,
+                eventDescription,
+                eventLocation,
+                eventStart,
+                eventEnd,
+                eventDate);
 
         return e;
 

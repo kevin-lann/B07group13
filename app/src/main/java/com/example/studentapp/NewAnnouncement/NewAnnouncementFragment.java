@@ -6,6 +6,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,10 +23,14 @@ import com.example.studentapp.objects.Announcement;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NewAnnouncementFragment extends Fragment {
     private NewAnnouncementFragmentBinding binding;
     private NewAnnouncementModel model;
+    private Spinner eventSpinner;
+    private String eventSelection;
     private final int ANNOUNCEMENT_MAX_LEN = 100;
     private final int ANNOUNCEMENT_DESC_MAX_LEN = 1000;
 
@@ -42,6 +49,22 @@ public class NewAnnouncementFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        eventSpinner = (Spinner)binding.spinnerIsEvent;
+        setupSpinner();
+
+        eventSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Log.w("NewAnnouncementTest" , "Selected");
+                eventSelection = eventSpinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         binding.buttonPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +73,7 @@ public class NewAnnouncementFragment extends Fragment {
                         if (a != null) {
                             model.postAnnouncement(a);
                             model.updateAnnouncementId(res + 1);
+                            Toast.makeText(getContext(), "Posted!", Toast.LENGTH_SHORT).show();
                         }
                 });
             }
@@ -59,7 +83,7 @@ public class NewAnnouncementFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(NewAnnouncementFragment.this)
-                        .navigate(R.id.action_testFragment_to_Login);
+                        .navigate(R.id.action_newAnnouncementFragment_to_Dashboard);
             }
         });
     }
@@ -70,28 +94,39 @@ public class NewAnnouncementFragment extends Fragment {
         binding = null;
     }
 
+    private void setupSpinner() {
+        List<String> eventList = model.getCreatedEventNames();
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                getContext(), android.R.layout.simple_spinner_item, eventList);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        eventSpinner.setAdapter(adapter);
+    }
+
     @SuppressLint("NewApi")
     private Announcement setupNewAnnouncement(long id) {
 
         AdminUser announcer = (AdminUser) MainActivity.currUser;
-        String announcementName = binding.textAnnouncementHeadline.getText().toString();
+        String announcementName = binding.editTextHeadline.getText().toString();
         String announcementDescription = binding.editTextAnnouncementText.getText().toString();
 
-        // parse start time (string --> int[2] = {hour, min} )
-
-        String time = null;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            time = LocalTime.now().toString();
+        // Check if user has selected event update from spinner
+        Log.w("NewAnnouncementTest" , "" + (eventSelection != null));
+        if(eventSelection != null) {
+            announcementName = "[Update for " + eventSelection + "]" + announcementName;
         }
+
+        // parse start time (string --> int[2] = {hour, min} )
+        String time = LocalTime.now().toString();
+
         int[] post_time = {
                 Integer.parseInt(time.substring(0, time.indexOf(':'))),
                 Integer.parseInt(time.substring(time.indexOf(':') + 1, 5))
         };
 
         // parse date (month, day, year)
-
-        String date = null;
-        date = LocalDate.now().toString();
+        String date = LocalDate.now().toString();
         String date_arr[] = date.split("-");
 
         int[] post_date = {
@@ -105,8 +140,8 @@ public class NewAnnouncementFragment extends Fragment {
             Toast.makeText(getContext(), "Announcement headline length exceeded.", Toast.LENGTH_SHORT);
             return null;
         }
-        if(announcementName.length() > ANNOUNCEMENT_MAX_LEN) {
-            Toast.makeText(getContext(), "Announcement headline length exceeded.", Toast.LENGTH_SHORT);
+        if(announcementDescription.length() > ANNOUNCEMENT_DESC_MAX_LEN) {
+            Toast.makeText(getContext(), "Announcement description length exceeded.", Toast.LENGTH_SHORT);
             return null;
         }
 
@@ -116,7 +151,4 @@ public class NewAnnouncementFragment extends Fragment {
         return a;
     }
 
-    public void setupSelection() {
-
-    }
 }
