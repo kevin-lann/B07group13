@@ -36,6 +36,10 @@
     <!-- View Complaints page-->
     <string name="see_detail">See Detail</string>
     <string name="back">Back</string>
+    <string name="by">By:</string>
+    <string name="on">On:</string>
+    <string name="delete">Delete</string>
+    <string name="back_to_dashboard">Back</string>
 
     <!-- Check POSt page-->
     <string name="check_post">Check POSt</string>
@@ -54,16 +58,18 @@
     <string name="GPAHint">e.g 3.0</string>
 
     <string-array name="items">
-        <item >Computer Science</item>
-        <item >Mathematics Major</item>
-        <item >Mathematics Specialist</item>
-        <item >Statistics Major</item>
-        <item >Statistics Specialist</item>
+        <item>Computer Science</item>
+        <item>Mathematics Major</item>
+        <item>Mathematics Specialist</item>
+        <item>Statistics Major</item>
+        <item>Statistics Specialist</item>
     </string-array>
 
 
     <string name="lorem_ipsum">
         lmao
     </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
