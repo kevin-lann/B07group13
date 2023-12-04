@@ -11,6 +11,7 @@ https://drive.google.com/drive/folders/1nDyRmBAPmfCftR0DbaYJHFc3e6O5pREs?usp=sha
 
 
 **Main tasks done by each group member:**
+
 Syed:
 - View Announcements [ User story 4 ]
 - Did work on private repo which we then connected with master repo later on
