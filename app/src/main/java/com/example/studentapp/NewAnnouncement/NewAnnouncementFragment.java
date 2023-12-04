@@ -42,8 +42,11 @@ public class NewAnnouncementFragment extends Fragment {
         binding.buttonPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Announcement a = setupNewAnnouncement();
-                model.postAnnouncement(a);
+                model.getAnnouncementId().thenAccept( res -> {
+                        Announcement a = setupNewAnnouncement(res);
+                        model.postAnnouncement(a);
+                        model.updateAnnouncementId(res + 1);
+                });
             }
         });
 
@@ -63,11 +66,8 @@ public class NewAnnouncementFragment extends Fragment {
     }
 
     @SuppressLint("NewApi")
-    private Announcement setupNewAnnouncement() {
-        // increment global annoucement id
-        MainActivity.currAnnouncementId++;
+    private Announcement setupNewAnnouncement(long id) {
 
-        int id = MainActivity.currAnnouncementId;
         AdminUser announcer = (AdminUser) MainActivity.currUser;
         String announcementName = binding.textAnnouncementHeadline.getText().toString();
         String announcementDescription = binding.editTextAnnouncementText.getText().toString();
@@ -95,9 +95,7 @@ public class NewAnnouncementFragment extends Fragment {
                 Integer.parseInt(date_arr[0])
         };
 
-        Log.w("announcementTest", "" + post_date[0] + post_date[1] + post_date[2] );
-
-        Announcement a = new Announcement(id, announcer.getUsername(), announcementName, announcementDescription,
+        Announcement a = new Announcement((int) id, announcer.getUsername(), announcementName, announcementDescription,
                 post_time, post_date);
 
         return a;

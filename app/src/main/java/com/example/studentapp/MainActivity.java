@@ -29,8 +29,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     public static User currUser;
-    public static int currAnnouncementId = 1000;
-    public static int currEventId = 1000;
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;

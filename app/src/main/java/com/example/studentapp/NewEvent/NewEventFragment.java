@@ -1,8 +1,6 @@
 package com.example.studentapp.NewEvent;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +10,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.studentapp.MainActivity;
-import com.example.studentapp.NewAnnouncement.NewAnnouncementFragment;
-import com.example.studentapp.NewAnnouncement.NewAnnouncementModel;
 import com.example.studentapp.R;
-import com.example.studentapp.databinding.NewAnnouncementFragmentBinding;
 import com.example.studentapp.databinding.NewEventFragmentBinding;
-import com.example.studentapp.objects.AdminUser;
-import com.example.studentapp.objects.Announcement;
 import com.example.studentapp.objects.Event;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class NewEventFragment extends Fragment{
 
@@ -44,8 +39,11 @@ public class NewEventFragment extends Fragment{
         binding.eventCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Event e = setupNewEvent();
-                model.postEvent(e);
+                model.getEventId().thenAccept( res -> {
+                    Event e = setupNewEvent(res);
+                    model.postEvent(e);
+                    model.updateEventId(res + 1);
+                });
             }
         });
 
@@ -58,11 +56,8 @@ public class NewEventFragment extends Fragment{
         });
     }
 
-    private Event setupNewEvent() {
-        // increment global event id
-        MainActivity.currEventId++;
+    private Event setupNewEvent(long id) {
 
-        int id = MainActivity.currEventId;
         String organizer = MainActivity.currUser.getUsername();
         String eventName = binding.eventName.getText().toString();
         String eventDescription = binding.eventDescription.getText().toString();
@@ -82,7 +77,7 @@ public class NewEventFragment extends Fragment{
         };
         int maxAttendees=Integer.parseInt(binding.eventMaxAttendees.getText().toString());
 
-        Event e = new Event(id, organizer, 0, maxAttendees, eventName, eventDescription, eventLocation,
+        Event e = new Event((int) id, organizer, 0, maxAttendees, eventName, eventDescription, eventLocation,
                 eventStart, eventEnd, eventDate);
 
         return e;
