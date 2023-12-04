@@ -26,13 +26,13 @@ public class NewEventModel {
     }
 
     public void updateEventId(long id) {
-        DatabaseReference ref= db.getReference().child("Events").child("EventID");
+        DatabaseReference ref= db.getReference().child("EventID");
         ref.setValue(id);
     }
 
     public CompletableFuture<Long> getEventId() {
         CompletableFuture<Long> res = new CompletableFuture<>();
-        DatabaseReference ref= db.getReference().child("Events").child("EventID");
+        DatabaseReference ref= db.getReference().child("EventID");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

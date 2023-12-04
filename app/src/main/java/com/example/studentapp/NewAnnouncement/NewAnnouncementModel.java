@@ -9,6 +9,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 
 public class NewAnnouncementModel {
@@ -25,13 +26,13 @@ public class NewAnnouncementModel {
     }
 
     public void updateAnnouncementId(long id) {
-        DatabaseReference ref= db.getReference().child("Announcements").child("AnnouncementID");
+        DatabaseReference ref= db.getReference().child("AnnouncementID");
         ref.setValue(id);
     }
 
     public CompletableFuture<Long> getAnnouncementId() {
         CompletableFuture<Long> res = new CompletableFuture<>();
-        DatabaseReference ref= db.getReference().child("Announcements").child("AnnouncementID");
+        DatabaseReference ref= db.getReference().child("AnnouncementID");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

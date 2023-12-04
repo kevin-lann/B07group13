@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -23,6 +24,8 @@ import java.time.LocalTime;
 public class NewAnnouncementFragment extends Fragment {
     private NewAnnouncementFragmentBinding binding;
     private NewAnnouncementModel model;
+    private final int ANNOUNCEMENT_MAX_LEN = 100;
+    private final int ANNOUNCEMENT_DESC_MAX_LEN = 1000;
 
     @Override
     public View onCreateView(
@@ -44,8 +47,10 @@ public class NewAnnouncementFragment extends Fragment {
             public void onClick(View view) {
                 model.getAnnouncementId().thenAccept( res -> {
                         Announcement a = setupNewAnnouncement(res);
-                        model.postAnnouncement(a);
-                        model.updateAnnouncementId(res + 1);
+                        if (a != null) {
+                            model.postAnnouncement(a);
+                            model.updateAnnouncementId(res + 1);
+                        }
                 });
             }
         });
@@ -95,9 +100,23 @@ public class NewAnnouncementFragment extends Fragment {
                 Integer.parseInt(date_arr[0])
         };
 
+        // Perform user input validity checks
+        if(announcementName.length() > ANNOUNCEMENT_MAX_LEN) {
+            Toast.makeText(getContext(), "Announcement headline length exceeded.", Toast.LENGTH_SHORT);
+            return null;
+        }
+        if(announcementName.length() > ANNOUNCEMENT_MAX_LEN) {
+            Toast.makeText(getContext(), "Announcement headline length exceeded.", Toast.LENGTH_SHORT);
+            return null;
+        }
+
         Announcement a = new Announcement((int) id, announcer.getUsername(), announcementName, announcementDescription,
                 post_time, post_date);
 
         return a;
+    }
+
+    public void setupSelection() {
+
     }
 }

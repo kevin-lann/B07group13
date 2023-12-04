@@ -53,7 +53,7 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
         holder.eventName.setText(event.eventName);
         holder.description.setText(event.eventDescription);
         holder.eventInfo.setText("Where: " + event.eventLocation
-                + "\n When: " + event.getFormattedDate()
+                + "\nWhen: " + event.getFormattedDate()
                 + " @ " + event.getFormattedTime());
         holder.organizer.setText("Event organized by " + event.organizer);
 
