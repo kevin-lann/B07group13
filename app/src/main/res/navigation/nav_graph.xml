@@ -93,6 +93,9 @@
         <action
             android:id="@+id/action_eventsFragment_to_rateEvent"
             app:destination="@id/rateEventFragment" />
+        <action
+            android:id="@+id/action_eventsFragment_to_viewEventFeedbackFragment"
+            app:destination="@id/ViewEventFeedbackFragment" />
 
     </fragment>
 
@@ -164,6 +167,14 @@
         android:name="com.example.studentapp.Announcements.AnnouncementDetailFragment"
         android:label="Announcement Details"
         tools:layout="@layout/announcement_detail_fragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ViewEventFeedbackFragment"
+        android:name="com.example.studentapp.ViewEventFeedback.ViewEventFeedbackFragment"
+        android:label="View Event Feedback"
+        tools:layout="@layout/view_feedback_fragment">
 
     </fragment>
 

@@ -18,6 +18,7 @@ import com.example.studentapp.MainActivity;
 import com.example.studentapp.NewAnnouncement.NewAnnouncementFragment;
 import com.example.studentapp.R;
 import com.example.studentapp.RateEvent.RateEventFragment;
+import com.example.studentapp.ViewEventFeedback.ViewEventFeedbackFragment;
 import com.example.studentapp.objects.Event;
 
 import java.lang.reflect.Array;
@@ -79,10 +80,10 @@ public class EventsUserAdapter extends RecyclerView.Adapter<EventsUserAdapter.ev
                     }
                 }
                 else {
-                    /** TODO replace with action to viewEventFeedback page
+                    ViewEventFeedbackFragment.eventId = "" + event.eventId;
+                    ViewEventFeedbackFragment.eventName = "" + event.eventName;
                      NavHostFragment.findNavController(fragment)
-                     .navigate(R.id.action_eventsFragment_to_viewEventFeedback);
-                     */
+                     .navigate(R.id.action_eventsFragment_to_viewEventFeedbackFragment);
                 }
             }
         });
