@@ -35,6 +35,7 @@ Peter:
 Kevin:
 - Login and Sign up (Admin and Student) [User story 1]
 - View Events [ User story 4 ]
+- Post Announcements [ User story 7 ]
 - Scheduale Events [ User story 8 ]
 - RSVP for event [ User story 5 ]
 - View Event Feedback and ratings [ User story 9 ]
