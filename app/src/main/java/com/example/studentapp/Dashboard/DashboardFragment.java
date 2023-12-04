@@ -34,7 +34,7 @@ public class DashboardFragment extends Fragment {
 
     private DatabaseReference db;
     private int checkPostButtonAction;
-    private long currentComplaintId;
+    private long currentAnnouncementId;
     private long currentEventId;
 
     public DashboardFragment() {
@@ -56,8 +56,77 @@ public class DashboardFragment extends Fragment {
         Log.w("dashTest", "first");
         setupDashboard(view);
 
-        getAnnouncementId().thenAccept(res1 -> {currentComplaintId = res1;});
-        getEventId().thenAccept(res2 -> {currentEventId = res2;});
+        getAnnouncementId().thenAccept(res1 -> {
+            currentAnnouncementId = res1;
+            db.child("Announcements").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (int i = 1; i < 4; i++) {
+                        AnnouncementBox announcementBox = snapshot
+                                .child(String.valueOf((int)currentAnnouncementId - i))
+                                .getValue(AnnouncementBox.class);
+                        if (announcementBox != null) {
+                            if (i == 1) {
+                                binding.announceTopic1.setText(announcementBox.getAnnouncementName());
+                                binding.sender1.setText(announcementBox.getAnnouncer());
+                                binding.date1.setText(announcementBox.getDate());
+                            } else if (i == 2) {
+                                binding.announceTopic2.setText(announcementBox.getAnnouncementName());
+                                binding.sender2.setText(announcementBox.getAnnouncer());
+                                binding.date2.setText(announcementBox.getDate());
+                            } else {
+                                binding.announceTopic3.setText(announcementBox.getAnnouncementName());
+                                binding.sender3.setText(announcementBox.getAnnouncer());
+                                binding.date3.setText(announcementBox.getDate());
+                            }
+                        }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.e("Firebase", "Error reading data: " + error.getMessage());
+                }
+            });
+        });
+        getEventId().thenAccept(res2 -> {
+            currentEventId = res2;
+            System.out.println(currentEventId);
+            db.child("Events").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    for (int j = 1; j < 4; j++) {
+                        int iterativeEventId = (int)currentEventId - j;
+                        EventBox eventBox = snapshot
+                                .child(iterativeEventId + "")
+                                .getValue(EventBox.class);
+                        if (eventBox != null) {
+
+                            if (j == 1) {
+                                binding.eventTopic1.setText(eventBox.getEventName());
+                                binding.sender4.setText(eventBox.getOrganizer());
+                                binding.date4.setText(eventBox.getDate());
+                                System.out.println(eventBox.eventName);
+                                System.out.println(eventBox.organizer);
+                                System.out.println(eventBox.date);
+                            } else if (j == 2) {
+                                binding.eventTopic2.setText(eventBox.getEventName());
+                                binding.sender5.setText(eventBox.getOrganizer());
+                                binding.date5.setText(eventBox.getDate());
+                            } else {
+                                binding.eventTopic3.setText(eventBox.getEventName());
+                                binding.sender6.setText(eventBox.getOrganizer());
+                                binding.date6.setText(eventBox.getDate());
+                            }
+                        }
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.e("Firebase", "Error reading data: " + error.getMessage());
+                }
+            });
+        });
+
 
         /**
         //set the toolbar
@@ -123,83 +192,9 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        db.child("Announcements").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (int i = 1; i < 4; i++) {
-                    AnnouncementBox announcementBox = snapshot
-                            .child(String.valueOf((int)currentComplaintId - i))
-                            .getValue(AnnouncementBox.class);
-                    if (announcementBox != null) {
-                        if (i == 1) {
-                            binding.announceTopic1.setText(announcementBox.getAnnouncementName());
-                            binding.sender1.setText(announcementBox.getAnnouncer());
-                            binding.date1.setText(announcementBox.getDate());
-                            System.out.println(announcementBox.announcementName);
-                            System.out.println(announcementBox.announcer);
-                            System.out.println(announcementBox.date);
-                        } else if (i == 2) {
-                            binding.announceTopic2.setText(announcementBox.getAnnouncementName());
-                            binding.sender2.setText(announcementBox.getAnnouncer());
-                            binding.date2.setText(announcementBox.getDate());
-                            System.out.println(announcementBox.announcementName);
-                            System.out.println(announcementBox.announcer);
-                            System.out.println(announcementBox.date);
-                        } else {
-                            binding.announceTopic3.setText(announcementBox.getAnnouncementName());
-                            binding.sender3.setText(announcementBox.getAnnouncer());
-                            binding.date3.setText(announcementBox.getDate());
-                            System.out.println(announcementBox.announcementName);
-                            System.out.println(announcementBox.announcer);
-                            System.out.println(announcementBox.date);
-                        }
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("Firebase", "Error reading data: " + error.getMessage());
-            }
-        });
 
-       /* db.child("Events").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (int j = 1; j < 4; j++) {
-                    EventBox eventBox = snapshot
-                            .child(String.valueOf((int)currentEventId - j))
-                            .getValue(EventBox.class);
-                    if (eventBox != null) {
-                        if (j == 1) {
-                            binding.eventTopic1.setText(eventBox.getEventName());
-                            binding.sender4.setText(eventBox.getOrganizer());
-                            binding.date4.setText(eventBox.getDate());
-                            System.out.println(eventBox.event_name);
-                            System.out.println(eventBox.organizer);
-                            System.out.println(eventBox.date);
-                        } else if (j == 2) {
-                            binding.eventTopic2.setText(eventBox.getEventName());
-                            binding.sender5.setText(eventBox.getOrganizer());
-                            binding.date5.setText(eventBox.getDate());
-                            System.out.println(eventBox.event_name);
-                            System.out.println(eventBox.organizer);
-                            System.out.println(eventBox.date);
-                        } else {
-                            binding.eventTopic3.setText(eventBox.getEventName());
-                            binding.sender6.setText(eventBox.getOrganizer());
-                            binding.date6.setText(eventBox.getDate());
-                            System.out.println(eventBox.event_name);
-                            System.out.println(eventBox.organizer);
-                            System.out.println(eventBox.date);
-                        }
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e("Firebase", "Error reading data: " + error.getMessage());
-            }
-        });*/
+
+
 
     }
 
