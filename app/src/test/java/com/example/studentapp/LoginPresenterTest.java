@@ -59,8 +59,11 @@ public class LoginPresenterTest {
 
     @Test
     public void testPerformLoginWithEmptyFields() {
+        when(mockedModel.queryDB(anyString(), anyString(), anyString()))
+                .thenReturn(CompletableFuture.completedFuture(false));
+
         LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
-        presenter.performLogin("", "", "Student");
+        presenter.performLogin("", "", "");
 
         verify(mockedView).loginUnsuccess();
     }
@@ -72,6 +75,20 @@ public class LoginPresenterTest {
 
         LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
         presenter.performLogin("invaliduser", "invalidpassword", "Student");
+
+        verify(mockedView).loginUnsuccess();
+    }
+
+    @Test
+    public void testPerformLoginWithError() {
+        CompletableFuture<Boolean> failedFuture = new CompletableFuture<>();
+        failedFuture.completeExceptionally(new RuntimeException("Simulated error"));
+
+        when(mockedModel.queryDB(anyString(), anyString(), anyString()))
+                .thenReturn(failedFuture);
+
+        LoginPresenter presenter = new LoginPresenter(mockedModel, mockedView);
+        presenter.performLogin("username", "password", "Admin");
 
         verify(mockedView).loginUnsuccess();
     }
