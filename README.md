@@ -9,6 +9,37 @@ Wireframes:
 https://drive.google.com/drive/folders/1nDyRmBAPmfCftR0DbaYJHFc3e6O5pREs?usp=sharing
 
 
+
+**Main tasks done by each group member:**
+Syed:
+- View Announcements [ User story 4 ]
+- Did work on private repo which we then connected with master repo later on
+
+Matthew:
+- Check POSt [ User story 2 ]
+
+Yousaf:
+- Event rating and feedback [ User story 6 ]
+- Did work on private repo which we then connected with master repo later on
+
+Arman:
+- Submit Complaints [ User story 3 ]
+- Login Presenter MVP testing
+
+Peter:
+- View Complaints [ User story 10 ]
+- Student Dashboard
+- Admin Dashboard
+
+Kevin:
+- Login and Sign up (Admin and Student) [User story 1]
+- View Events [ User story 4 ]
+- Scheduale Events [ User story 8 ]
+- RSVP for event [ User story 5 ]
+- View Event Feedback and ratings [ User story 9 ]
+
+
+
 **Meeting notes:**
 
 Nov 7
@@ -66,6 +97,9 @@ Plans
 - Finish backends for previous few weeks and do last 3 or so user stories
 
 Dec 1
+
+What was discussed:
+
 - Bug fixing
 - Connecting last fragments
 - Testing
@@ -77,4 +111,17 @@ Plans:
 - Connect up last few fragments
 - Test
 - Clean up UI
+
+Dec 4
+
+What was Discussed:
+  - final bug fixes
+  - App logo
+  - Fix firebase key naming convention
+
+Plans:
+- Do some user testing
+- fix bugs
+- submit
+
 
