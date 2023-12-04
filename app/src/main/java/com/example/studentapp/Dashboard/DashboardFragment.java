@@ -135,14 +135,23 @@ public class DashboardFragment extends Fragment {
                             binding.announceTopic1.setText(announcementBox.getAnnouncementName());
                             binding.sender1.setText(announcementBox.getAnnouncer());
                             binding.date1.setText(announcementBox.getDate());
+                            System.out.println(announcementBox.announcementName);
+                            System.out.println(announcementBox.announcer);
+                            System.out.println(announcementBox.date);
                         } else if (i == 2) {
                             binding.announceTopic2.setText(announcementBox.getAnnouncementName());
                             binding.sender2.setText(announcementBox.getAnnouncer());
                             binding.date2.setText(announcementBox.getDate());
+                            System.out.println(announcementBox.announcementName);
+                            System.out.println(announcementBox.announcer);
+                            System.out.println(announcementBox.date);
                         } else {
                             binding.announceTopic3.setText(announcementBox.getAnnouncementName());
                             binding.sender3.setText(announcementBox.getAnnouncer());
                             binding.date3.setText(announcementBox.getDate());
+                            System.out.println(announcementBox.announcementName);
+                            System.out.println(announcementBox.announcer);
+                            System.out.println(announcementBox.date);
                         }
                     }
                 }
@@ -153,7 +162,7 @@ public class DashboardFragment extends Fragment {
             }
         });
 
-        /*db.child("Events").addValueEventListener(new ValueEventListener() {
+       /* db.child("Events").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (int j = 1; j < 4; j++) {
@@ -162,19 +171,26 @@ public class DashboardFragment extends Fragment {
                             .getValue(EventBox.class);
                     if (eventBox != null) {
                         if (j == 1) {
-                            binding.eventTopic1.setText(eventBox.getEventLocation());
-                            System.out.println(eventBox.getEventName());
+                            binding.eventTopic1.setText(eventBox.getEventName());
                             binding.sender4.setText(eventBox.getOrganizer());
                             binding.date4.setText(eventBox.getDate());
+                            System.out.println(eventBox.event_name);
+                            System.out.println(eventBox.organizer);
+                            System.out.println(eventBox.date);
                         } else if (j == 2) {
-                            binding.eventTopic2.setText("Test2");
-                            System.out.println("Hello");
+                            binding.eventTopic2.setText(eventBox.getEventName());
                             binding.sender5.setText(eventBox.getOrganizer());
                             binding.date5.setText(eventBox.getDate());
+                            System.out.println(eventBox.event_name);
+                            System.out.println(eventBox.organizer);
+                            System.out.println(eventBox.date);
                         } else {
                             binding.eventTopic3.setText(eventBox.getEventName());
                             binding.sender6.setText(eventBox.getOrganizer());
                             binding.date6.setText(eventBox.getDate());
+                            System.out.println(eventBox.event_name);
+                            System.out.println(eventBox.organizer);
+                            System.out.println(eventBox.date);
                         }
                     }
                 }
@@ -183,9 +199,8 @@ public class DashboardFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError error) {
                 Log.e("Firebase", "Error reading data: " + error.getMessage());
             }
-        });
+        });*/
 
-*/
     }
 
     public CompletableFuture<Long> getAnnouncementId() {

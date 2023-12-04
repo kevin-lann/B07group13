@@ -48,13 +48,14 @@ public class EventBox {
 
     public String getEventLocation() {
         return event_location;
-    } //error
+    } //x
 
     public void setEventLocation(String event_location) {
         this.event_location = event_location;
     }
 
     public String getEventName(){ //error
+        System.out.println("Method get_event_name() called");
         return event_name;
     }
 
@@ -64,7 +65,7 @@ public class EventBox {
 
     public String getMaxAttendees() {
         return max_attendees;
-    } //error
+    } //x
 
     public void setMaxAttendees(String max_attendees) {
         this.max_attendees = max_attendees;
@@ -72,7 +73,7 @@ public class EventBox {
 
     public String getNumAttendees() {
         return num_attendees;
-    } //error
+    } //x
 
     public void setNumAttendees(String num_attendees) {
         this.num_attendees = num_attendees;
@@ -88,7 +89,7 @@ public class EventBox {
 
     public String getTimeEnd() {
         return time_end;
-    } //error
+    } //x
 
     public void setTimeEnd(String time_end) {
         this.time_end = time_end;
@@ -96,7 +97,7 @@ public class EventBox {
 
     public String getTimeStart() {
         return time_start;
-    } //error
+    } //x
 
     public void setTimeStart(String time_start) {
         this.time_start = time_start;
