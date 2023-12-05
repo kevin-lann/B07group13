@@ -24,7 +24,7 @@
         android:id="@+id/detailImage"
         android:padding="8dp"
         android:layout_gravity="center"
-        android:src="@drawable/uploadimg"
+        android:src="@drawable/AppAnnouncement"
         android:scaleType="fitXY"/>
 
     <TextView

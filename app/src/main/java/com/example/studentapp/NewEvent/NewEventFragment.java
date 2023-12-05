@@ -161,9 +161,9 @@ public class NewEventFragment extends Fragment{
 
     }
 
-    private boolean isNumeric(String str) {
+    private boolean isNumeric(String val) {
         try {
-            Integer.parseInt(str);
+            Integer.parseInt(val);
             return true;
         }
         catch (NumberFormatException e) {
