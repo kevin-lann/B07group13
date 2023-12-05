@@ -113,6 +113,7 @@ public class NewAnnouncementFragment extends Fragment {
         EventsModel eModel = new EventsModel();
         eModel.getUserEvents(MainActivity.currUser).thenAccept( res -> {
             ArrayList<String> eventList = new ArrayList<>();
+            eventList.add("None");
             ArrayAdapter<String> adapter = null;
 
             for(String id : res) {
@@ -132,7 +133,7 @@ public class NewAnnouncementFragment extends Fragment {
         String announcementDescription = binding.editTextAnnouncementText.getText().toString();
 
         // Check if user has selected event update from spinner
-        if(eventSelection != null) {
+        if(eventSelection != "None") {
             announcementName = "[Update for " + eventSelection + "] " + announcementName;
         }
 

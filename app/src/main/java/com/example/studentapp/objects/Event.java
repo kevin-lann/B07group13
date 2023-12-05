@@ -117,8 +117,6 @@ public class Event {
         Map<String, String> info = new HashMap<>();
         info.put("eventName", eventName);
         info.put("organizer", organizer);
-        info.put("numAttendees", "" + numAttendees);
-        info.put("maxAttendees", "" + maxAttendees);
         info.put("eventLocation", eventLocation);
         info.put("eventDescription", eventDescription);
         info.put("timeStart", startTime[0] + ":" + startTime[1] );
