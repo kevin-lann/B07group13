@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dash_toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/student_dash"
-    android:id="@+id/dash_toolbar"
-    android:elevation="4dp">
+    android:elevation="0dp">
 
     <TextView
         android:id="@+id/toolbar_title"
@@ -15,6 +15,14 @@
         android:textColor="@android:color/white"
         android:textSize="28dp" />
 
+    <ImageButton
+        android:id="@+id/dash_sign_out_button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/student_dash"
+        android:layout_gravity="top"
+        android:rotationY="180"
+        android:src="@drawable/dash_sign_out" />
 
 
 </androidx.appcompat.widget.Toolbar>

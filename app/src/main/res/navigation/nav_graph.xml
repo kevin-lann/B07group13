@@ -83,6 +83,9 @@
         <action
             android:id="@+id/action_dashboardFragment_to_checkPOStFragment"
             app:destination="@id/checkPOStFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
     </fragment>
 
     <fragment
