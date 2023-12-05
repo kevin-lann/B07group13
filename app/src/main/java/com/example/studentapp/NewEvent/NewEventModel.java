@@ -25,8 +25,8 @@ public class NewEventModel {
         ref.child(id).setValue(event.createMap());
 
         ref = db.getReference().child("UserInfo").child("Admin")
-                .child(event.organizer).child("Created_Events");
-        ref.setValue(id);
+                .child(event.organizer).child("Created_Events").child(id);
+        ref.setValue(event.eventName);
     }
 
     public void updateEventId(long id) {

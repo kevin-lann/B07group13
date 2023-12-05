@@ -31,8 +31,8 @@ public class NewAnnouncementModel {
         ref.child(id).setValue(announcement.createMap());
 
         ref = db.getReference().child("UserInfo").child("Admin")
-                .child(announcement.announcer).child("Created_Announcements");
-        ref.setValue(id);
+                .child(announcement.announcer).child("Created_Announcements").child(id);
+        ref.setValue(announcement.announcementName);
     }
 
     public void updateAnnouncementId(long id) {
@@ -57,16 +57,5 @@ public class NewAnnouncementModel {
         return res;
     }
 
-    public List<String> getCreatedEventNames() {
-        List<String> eventList = new ArrayList<>();
-        EventsModel eModel = new EventsModel();
-        eModel.getUserEvents(MainActivity.currUser).thenAccept( res -> {
-                for(String id : res) {
-                    eModel.getEventFromId(id).thenAccept( event -> {
-                            eventList.add(event.eventName);
-                    });
-                }
-        });
-        return eventList;
-    }
+
 }

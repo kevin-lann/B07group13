@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.studentapp.Events.EventsModel;
 import com.example.studentapp.MainActivity;
 import com.example.studentapp.R;
 import com.example.studentapp.databinding.NewAnnouncementFragmentBinding;
@@ -49,21 +50,8 @@ public class NewAnnouncementFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        eventSpinner = (Spinner)binding.spinnerIsEvent;
+        eventSpinner = (Spinner)view.findViewById(R.id.spinnerIsEvent);
         setupSpinner();
-
-        eventSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.w("NewAnnouncementTest" , "Selected");
-                eventSelection = eventSpinner.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         binding.buttonPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,15 +81,47 @@ public class NewAnnouncementFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
+    /**
     private void setupSpinner() {
         List<String> eventList = model.getCreatedEventNames();
-
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 getContext(), android.R.layout.simple_spinner_item, eventList);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         eventSpinner.setAdapter(adapter);
+    }**/
+
+    private void initAdapter(ArrayAdapter<String> adapter, ArrayList<String> eventList) {
+        adapter = new ArrayAdapter<>(
+                getContext(), android.R.layout.simple_spinner_item, eventList);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        eventSpinner.setAdapter(adapter);
+        eventSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                eventSelection = eventSpinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                eventSelection = null;
+            }
+        });
+    }
+
+    private void setupSpinner() {
+        EventsModel eModel = new EventsModel();
+        eModel.getUserEvents(MainActivity.currUser).thenAccept( res -> {
+            ArrayList<String> eventList = new ArrayList<>();
+            ArrayAdapter<String> adapter = null;
+
+            for(String id : res) {
+                eModel.getEventFromId(id).thenAccept( event -> {
+                    eventList.add(event.eventName);
+                    initAdapter(adapter, eventList);
+                });
+            }
+        });
     }
 
     @SuppressLint("NewApi")
@@ -112,9 +132,8 @@ public class NewAnnouncementFragment extends Fragment {
         String announcementDescription = binding.editTextAnnouncementText.getText().toString();
 
         // Check if user has selected event update from spinner
-        Log.w("NewAnnouncementTest" , "" + (eventSelection != null));
         if(eventSelection != null) {
-            announcementName = "[Update for " + eventSelection + "]" + announcementName;
+            announcementName = "[Update for " + eventSelection + "] " + announcementName;
         }
 
         // parse start time (string --> int[2] = {hour, min} )
