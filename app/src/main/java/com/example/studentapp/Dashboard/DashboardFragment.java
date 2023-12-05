@@ -6,10 +6,13 @@ import static android.view.View.VISIBLE;
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -49,12 +52,17 @@ public class DashboardFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = DashboardFragmentBinding.inflate(inflater, container, false);
+
         return binding.getRoot();
     }
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Log.w("dashTest", "first");
         setupDashboard(view);
+
+        if(getActivity() != null){
+            ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        }
 
         getAnnouncementId().thenAccept(res1 -> {
             currentAnnouncementId = res1;
@@ -136,6 +144,28 @@ public class DashboardFragment extends Fragment {
         getSupportActionBar().setTitle(null);
          **/
 
+        binding.dashToolbar.dashSignOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+                builder.setTitle("Sign Out")
+                        .setMessage("Are you sure you want to sign out?")
+                        .setPositiveButton("Sign Out", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                NavHostFragment.findNavController(DashboardFragment.this)
+                                        .navigate(R.id.action_dashboardFragment_to_LoginFragment);
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+                builder.create().show();
+            }
+        });
+
+
         binding.seeAnnouncements.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,19 +213,6 @@ public class DashboardFragment extends Fragment {
                         .navigate(checkPostButtonAction);
             }
         });
-
-        // TODO prob will not need
-        binding.announcement1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getActivity(), "More details coming soon", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-
     }
 
     public CompletableFuture<Long> getAnnouncementId() {
@@ -258,6 +275,7 @@ public class DashboardFragment extends Fragment {
         if(MainActivity.currUser.getUserType().equals("Admin")) {
             view.findViewById(R.id.dash_toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.admin_dash));
             getActivity().findViewById(R.id.toolbar).setBackgroundColor(ContextCompat.getColor(getContext(), R.color.admin_dash));
+            binding.dashToolbar.dashSignOutButton.setBackgroundTintList(getResources().getColorStateList(R.color.admin_dash));
             Log.w("dashTest", "setting visibility");
             binding.newAnnouncement.setVisibility(VISIBLE);
             binding.newEvent.setVisibility(VISIBLE);
